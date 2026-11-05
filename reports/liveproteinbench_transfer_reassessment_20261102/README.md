@@ -1,3 +1,82 @@
+# LiveProteinBench: evaluating the evaluation
+
+## What are we checking?
+
+LiveProteinBench asks models to choose one answer to each protein question. This review asks whether the author's answer is supported, whether a question can be answered using transferable biological knowledge, and whether its choices may admit more than one defensible answer. It evaluates the **questions**, not model-solving performance.
+
+GPT-6 Luna and Qwen3.8 Flash-Next reviewed **1,736 of 1,797** original questions with cached evidence; 61 were outside the review. Some questions were reassessed on November 4 after an earlier flag. The results below combine review rounds and model judgments; they are not expert adjudication or a uniform rerun.
+
+## What did the reviews find?
+
+| Finding | Questions | Share of 1,736 | Meaning |
+|---|---:|---:|---|
+| Both supported the author key | 1,679 | 96.72% | The reviewers considered the saved evidence supportive; this does not prove the key is uniquely correct. |
+| Both marked the author key contradicted | 12 | 0.69% | The reviewers considered the evidence inconsistent with the key; these need inspection. |
+| Both labeled the question lookup-dependent | 52 | 3.00% | Candidate exclusions from a reasoning-focused score, not proven impossible to solve by reasoning. [See all 52](lookup_dependent_52_20261104.md). |
+| Both listed at least two defensible choices | 86 | 4.95% | Possible answer-choice problems to check; the listed alternatives are not automatically correct. [See all 86](multiple_defensible_by_both_86_20261104.md). |
+
+These rows measure different things and cannot be added together. Two questions appear in both the 52 and 86 lists. For four of the 86, the reviewers listed different sets with fewer than two choices in common. The findings do not establish a whole-benchmark rate of confirmed ambiguous questions.
+
+For the answerability review, both reviewers selected reasoning-supported on 1,427 questions, both selected lookup-dependent on 52, one selected each on 179, at least one was uncertain on 77, and one question had an unusable review. These categories total 1,736.
+
+## How could these reviews inform an evaluation?
+
+The [evaluation handoff](../../handoff/liveproteinbench_question_review_20261104.md) lists the proposed 52 exclusions and each reviewer's candidate choices for all 86 flagged questions. It recommends preserving the original score, reporting any adjusted score separately, and checking the evidence before accepting additional answers. Removing the 52 leaves 1,684 reviewed questions, of which 84 still appear on the multiple-choice flag list. The remaining questions have not all been independently verified.
+
+## Examples
+
+<details>
+<summary>Magnesium and manganese are both listed — cofactor_0135</summary>
+
+**Choices**
+
+```text
+A. heme
+B. Zn(2+)
+C. Mn(2+)
+D. Mg(2+)
+```
+
+**Author key:** D. Mg(2+)
+
+The author key is D (Mg²⁺), while C is Mn²⁺. Both reviewers point to the matched annotation saying the protein can bind Mg²⁺ or Mn²⁺, making both candidate answers worth checking. The cited annotation is inferred by similarity rather than a direct measurement on this protein.
+
+[Full question, both saved reviews, and evidence](multiple_defensible_by_both_86_20261104.md#case-cofactor_0135)
+
+</details>
+
+<details>
+<summary>Why both reviewers flagged a lookup concern — EC_number_0005</summary>
+
+**Choices**
+
+```text
+A. 1.1.1.440
+B. 1.1.1.195
+C. 2.7.11.24
+D. 1.14.15.9
+```
+
+**Author key:** A. 1.1.1.440
+
+The author key is A (EC 1.1.1.440). Both reviewers say the sequence can support a broad oxidoreductase class but that they do not find a clear transferable basis to choose between A and B, which specify different activities. The matched annotation supports A; the reviewers’ assessment does not prove that a biological inference could not distinguish the choices.
+
+[Full question, both saved reviews, and evidence](lookup_dependent_52_20261104.md#case-ec_number_0005)
+
+</details>
+
+## How to inspect the work
+
+- [All 52 lookup-flagged questions](lookup_dependent_52_20261104.md): original inputs, author key, both saved reviews and links to evidence.
+- [All 86 multiple-choice flags](multiple_defensible_by_both_86_20261104.md): each reviewer’s listed options, complete saved reviews and evidence links.
+- [Earlier question review and evidence](../liveproteinbench_question_reviews_20261101/README.md).
+- [Original 1,328-question method](METHOD.md) and [reviewer instructions](REVIEWER_PROMPTS.md). These describe the earlier round, not every later reassessment.
+
+The paper describes single-answer multiple-choice scoring and database-derived ground truth, but does not specify a distractor-generation procedure in its dataset-construction section or appendix. [LiveProteinBench paper](https://arxiv.org/html/2512.22257v1).
+
+<details>
+<summary>Historical November 2 report: 1,328-question reassessment</summary>
+
 # LiveProteinBench: reasoning versus lookup
 
 GPT-6 Luna and Qwen3.8-Flash-Next-NVFP4 assess **1,328 selected questions**. They check whether the evidence supports the expected answer and whether the choices can be distinguished using the question inputs and transferable biological knowledge.
@@ -1348,3 +1427,5 @@ Open a question to see its complete inputs, expected answer, source evidence and
 | [transmembrane_0131](cases/transmembrane_0131.md) | reasoning-supported | reasoning-supported | Yes |
 | [transmembrane_0132](cases/transmembrane_0132.md) | reasoning-supported | reasoning-supported | Yes |
 | [transmembrane_0133](cases/transmembrane_0133.md) | reasoning-supported | reasoning-supported | Yes |
+
+</details>
