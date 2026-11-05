@@ -1,5 +1,7 @@
 # LiveProteinBench: Luna’s review of Luna versus Qwen 4B epoch 5
 
+**[Inspect the 30 Qwen answers with sequence-reading flags](qwen_sequence_reading_mismatches_30_20261105.md)**
+
 ## What was tested
 
 This page shows a saved diagnostic study of **50 solution pairs**. The 50 were randomly sampled, using seed 42, from **653 questions on which the frozen benchmark scoring marked Luna correct and Qwen 4B epoch 5 wrong**. This selection deliberately focuses on a subset favoring Luna; it is not a representative sample of the benchmark or of every Qwen model.
