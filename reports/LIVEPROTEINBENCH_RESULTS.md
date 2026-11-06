@@ -1,12 +1,13 @@
 # LiveProteinBench model results
 
-Snapshot: November 4, 2026. This page brings together sequence-only LiveProteinBench model results. Test sets and evaluation settings differ between results. Accuracy measures agreement with the benchmark's saved answer. The benchmark paper results use all 1,797 questions; our full-set results cover 1,736 reviewed questions.
+Snapshot: November 5, 2026. This page brings together sequence-only LiveProteinBench model results. Test sets and evaluation settings differ between results. Accuracy measures agreement with the benchmark's saved answer. The benchmark paper results use all 1,797 questions; our full-set results cover 1,736 reviewed questions.
 
 ## Results
 
 | Model or checkpoint | Accuracy | Setting |
 |---|---:|---|
 | Our trained Qwen checkpoints | | |
+| Qwen3.5-4B, mixed Flash-Next solutions | 38.54% | 669/1,736; epoch 2; full context |
 | Qwen3.5-4B, Flash-Next answer-blind low effort | 35.83% | 622/1,736; full context |
 | Qwen3.5-4B, Flash-Next answer-blind xhigh effort | 30.24% | 525/1,736; full context |
 | Qwen3.5-4B, Flash-Next answer and source shown | 22.41% | 389/1,736; 32K output |
@@ -33,6 +34,8 @@ The trained rows show the best evaluated checkpoint for each approach, selected 
 The [original dataset](https://huggingface.co/datasets/jiangdongwei/protein-sequence-reasoning-10k) contains 10,000 protein multiple-choice questions across 1,910 protein sequences and 25 task types. GPT-6 Luna wrote the questions and worked explanations using UniProt annotation context. Separate Luna calls and automated checks reviewed the questions; these are model-checked, not expert-verified, labels. The student was trained on the generated explanations and final answers conditioned on the sequence, question and choices; it did not receive the teacher's source annotations as input. Of the 10,000 training questions, 5,768 belong to 11 task categories with the same names as LiveProteinBench tasks. Another 139 concern temperature dependence, which is related to but distinct from the benchmark's temperature task. The remaining 4,093 questions use other protein-annotation task labels. All training questions use four-choice multiple-choice format; LiveProteinBench evaluates 12 core task categories.
 
 For the later experiments, Flash-Next generated new solutions to these same questions. We tested different information provided to the teacher and different reasoning-effort settings, then fine-tuned separate Qwen3.5-4B models on the resulting solutions.
+
+The mixed-data model was trained on 114,122 additional Flash-Next solutions together with 9,988 earlier low-effort Flash-Next solutions, for 124,110 unique examples. The teacher answers were not filtered against answer keys. Its result above is from the best completed evaluation so far, at epoch 2; training is continuing.
 
 ## Data-generation comparisons
 
