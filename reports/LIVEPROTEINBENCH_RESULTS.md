@@ -1,12 +1,12 @@
 # LiveProteinBench model results
 
-| Model or training approach | Training examples (rounded) | Teacher | Accuracy |
+| Model or training approach | Training examples | Teacher | Accuracy |
 |---|---:|---|---:|
 | **Our trained Qwen3.5-4B** | | |  |
-| Scaled questions | 124,000 | Qwen3.8 Flash-Next, low | 42.83% |
-| Original questions | 10,000 | Qwen3.8 Flash-Next, low | 37.63% |
-| Original questions | 10,000 | Qwen3.8 Flash-Next, xhigh | 32.32% |
-| Skill-guided: 5,000 standard + 5,000 skill-guided questions | 10,000 | Qwen3.8 Flash-Next, low |  |
+| Scaled questions | 124,000 | Flash-Next, low | 42.83% |
+| Original questions | 10,000 | Flash-Next, low | 37.63% |
+| Original questions | 10,000 | Flash-Next, xhigh | 32.32% |
+| Skill-guided: 5,000 standard + 5,000 skill-guided questions | 10,000 | Flash-Next, low |  |
 | **Other models: our evaluations** | | |  |
 | [GPT-6 Luna, high](LIVEPROTEINBENCH_GPT6_LUNA_HIGH32K_RESULT.md) | | | 68.28% |
 | Qwen3.8 Flash-Next, xhigh | | | 50.96% |
@@ -23,8 +23,7 @@
 | [Qwen2.5-VL-32B](https://arxiv.org/html/2512.22257v1#A4.T5) | | | 33.05% |
 | [InternVL3-78B](https://arxiv.org/html/2512.22257v1#A4.T5) | | | 23.37% |
 
-## Future work
+## Next steps
 
-- Generate synthetic questions and paragraphs for biological reasoning.
-- Develop question- and answer-informed synthetic documents for post-training and mid-training, inspired by [Synthetic Mixed Training](https://arxiv.org/abs/2603.23562).
-- Explore whether code-based training data can improve biological reasoning.
+- **Inject more biological knowledge.** Generate synthetic documents from our existing resources for mid-training or post-training. One method to try is [Synthetic Mixed Training](https://arxiv.org/abs/2603.23562).
+- **Explore code for biological reasoning.** Code is widely used in language model training and may support reasoning across domains. Why has it been used less for biological reasoning, and could it help here?
