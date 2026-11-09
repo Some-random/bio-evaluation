@@ -179,74 +179,71 @@ The protein&#x27;s domain composition (two GAddH folds flanking a zinc/Cys-rich 
 </details>
 
 <details>
-<summary>Example: interpreting an EC number</summary>
+<summary>Example: distinguishing water-repelling stretches from membrane-spanning regions</summary>
 
-**Skill:** Connect an EC number to the specific enzyme activity it describes.
+**Skill:** Evaluate whether a protein sequence supports a membrane-spanning region instead of assuming that every water-repelling stretch crosses a membrane.
 
-**Original task description:** The current task is about Enzyme Commission (EC) Number Prediction, which is to predict the complete 4-digit Enzyme Commission (EC) number for a given protein. The EC number is a numerical classification that categorizes enzymes based on the chemical reactions they catalyze. You should select the most accurate EC number from the provided options based on the protein's sequence..
+**Original task description:** The current task is about Gene Ontology (GO) Cellular Component Prediction, which is to predict the primary Cellular Component where a protein is located, according to the Gene Ontology (GO) framework. A protein's location within a cell (e.g., Nucleus, Mitochondria, Cytoplasm) is critical for its function and is often determined by specific targeting signals in its amino acid sequence. Based on the provided sequence, you must identify the most likely compartment where the protein resides..
 
 **Protein sequence:**
 
 ```text
-MMESAVTAHTLRIAMAQFDFPVGAVTQNTDRIIEYIAAARDEFEADIVLFPELAISGYPPEDLLLRPGFLAHCEQALARIAAATRGIVAVVGWPQSAGSVVYNAASVLREGRIEATYRKRELPNYAVFDERRYFDVDPDGDNCVVTVKGVQVGVVICEDLWFAEPLAKTVQAGAELVLVPNASPYERGKHAQRDALLAERTRESGAAIAYLNVVGGQDALVFDGASVVADGDGTVHPAAAAFVDQWLVVDYAAGERSFTPVVWVDDGDESMDALAWRAVVRGLKDYCGKNGFRKVWLGLSGGIDSALVLAMAVDALGGENVTAVRLPSRYTAGLSNDLADEQCRALGVKLETIAIEPAFEGLLAALGPLFADTQPDITEENLQSRSRGVILMALSNKFGGLVLTTGNKSEYAVGYATIYGDMCGGYAPLKDLYKTEVFGLAKWRNTVGGAPVIPPAVISRPPSAELRDNQTDQDSLPPYDVLDGILYRYVDQEQSRDDIVAAGYAADTVEHVLRLVRLNEWKRHQAAPGPKVSRRAFGRERRYPITNGYSGQ
+MKPLVIFDLDGTLVDTPSGIVSAFITALRDLSMPFEDRRAIRATIGLPLEKAFGQILALPVEDERVTAAVRQYQAVFREQVLPQAPGLVFPGVVEGLALLKGQGYTLAVATSKVFASAKALLEAAGLWSYFDLVLGADMVAHPKPHPEMGLLAMSRLGADAATTAMVGDTTHDLLMAKQAGMAAIGVTWGIHTTDQLKAAEPQVIVDTFSEVVGAAHALLKLSSSPVSYC
 ```
 
 **Original choices:**
 
 ```text
-A. 5.6.2.4
-B. 2.3.1.193
-C. 6.3.5.1
-D. 1.14.19.80
+A. cytosol
+B. microneme
+C. presynaptic active zone
+D. virion membrane
 ```
 
-**Author’s answer:** C, EC 6.3.5.1.
+**Author’s answer:** A, cytosol.
 
-**What happened:** The teacher identified EC 6.3.5.1 as NAD synthase, which helps make NAD⁺ for cell metabolism. Our trained model called it DNA ligase, which joins DNA, rejected the choice, and selected D.
+**What happened:** Our trained model interpreted several short water-repelling stretches as membrane-spanning regions and chose B, microneme—a compartment found in certain parasites. The teacher reported no obvious membrane-spanning region and chose A, the cytosol, the fluid inside the cell.
+
+**Why this skill matters:** Short water-repelling stretches can also occur in soluble proteins. Their presence alone does not establish that a protein crosses a membrane or identify a specific cellular compartment.
 
 <details>
 <summary>Full saved answers from both models</summary>
 
 **Our trained model’s full saved answer:**
 
-<pre>## Analysis of the Protein Sequence for EC Number Prediction
+<pre>## Analysis
 
-### Step 1: Analyze Protein Sequence Characteristics
+### Step 1: Sequence Characterization
 
-**Length:** ~450 amino acids
-**Key structural motifs identified:**
-- **N-terminal Rossmann-like fold**: `GWPQSAGS` (GxGxxG-type nucleotide/cofactor binding motif) — characteristic of NAD(P)-dependent oxidoreductases
-- **&quot;GDS&quot; motif** (~position 380): associated with catalytic sites in certain oxidoreductase families
-- **&quot;GKNFG&quot;**: possible metal-binding or catalytic residue environment
-- **Overall topology**: Two-domain architecture (N-terminal cofactor-binding + C-terminal catalytic domain)
+I examined the ~240 amino acid protein sequence for key features:
 
-### Step 2: Evaluate Each Option
+- **Hydrophobicity**: The sequence contains multiple hydrophobic stretches (e.g., &quot;IVSAFITALR&quot;, &quot;FGQILALPV&quot;, &quot;GLVFPGVVEGLALL&quot;, &quot;AIGVTWGIHTTD&quot;) indicating **transmembrane domains**.
+- **No soluble-cytosolic signature**: There are no dominant water-soluble regions without hydrophobic segments, ruling out a cytosolic location.
+- **Targeting signals**: No clear nuclear localization signal (NLS), no mitochondrial targeting presequence, no clear SNARE motif (SxxSxxT consensus), no virus-specific fusion/glycosylation signatures.
 
-| Option | EC Number | Enzyme Class | Compatibility? |
-|--------|-----------|-------------|----------------|
-| A | 5.6.2.4 | Transferase (hydroxyalkyl) | ❌ No transferase motifs (no conserved catalytic triad or reactive center typical of transferases) |
-| B | 2.3.1.193 | Acyl transferase | ❌ No acyl-CoA/acyl-group processing motifs (no HxHC, no thioesterase active site) |
-| C | 6.3.5.1 | DNA Ligase (ATP-dependent) | ❌ Lacks ADP/ATP-binding domain (e.g., VAIK motif), lacks KxDxG motif essential for adenylate linkage |
-| D | 1.14.19.80 | Oxidoreductase (ascorbate:Fe²⁺ oxidoreductase) | ✅ Strong match |
+### Step 2: Biological Context Assessment
 
-### Step 3: Reasoning
+| Option | Expected Features | Match? |
+|--------|------------------|--------|
+| A. Cytosol | Hydrophilic, no TMs | ❌ Clearly ruled out by multiple TMs |
+| B. Microneme | Multi-pass membrane protein; traverses parasitophorous compartment during biogenesis | ✅ Consistent |
+| C. Presynaptic active zone | SNARE motifs, syntrophin-like domains | ❌ No SNARE-like motifs detected |
+| D. Virion membrane | Viral envelope protein motifs (fusion peptides, glycosylation sites) | ❌ No characteristic viral envelope motifs |
 
-The Rossmann-like fold at the N-terminus (`GWPQSAGS`) is the hallmark of NAD(P)-dependent oxidoreductases. Among the four options, **only EC 1.14.19.80** belongs to the oxidoreductase family (EC 1.x.x.x). 
+### Step 3: Final Reasoning
 
-- Options A (5.6.2.4) and B (2.3.1.193) are transferases — the sequence lacks any conserved transferase catalytic motifs (e.g., conserved acidic residues, thiol/tryptophan catalytic sites).
-- Option C (6.3.5.1) is a DNA ligase — DNA ligases are characterized by distinct NTP-binding motifs (VAIK, KxDG), which are completely absent here.
-- Option D (1.14.19.80) describes an oxido-reductase using ascorbate as electron acceptor — the Rossmann fold + C-terminal catalytic domain architecture is fully consistent with this assignment.
+The protein displays a **multi-pass α-helical transmembrane architecture** with approximately 3–4 membrane-spanning segments, separated by amphipathic loops. This topology is highly consistent with proteins that traverse multiple internal membranes during trafficking through the apical complex (a hallmark of microneme biogenesis in apicomplexan parasites). There is no evidence supporting any of the other three locations.
 
-### Step 4: Final Answer
+### Step 4: Answer Selection
 
-The protein&#x27;s domain architecture (Rossmann fold + catalytic domain) and absence of non-oxidoreductase features strongly support classification as an ascorbate:iron(II) oxidoreductase.
+The multi-pass transmembrane topology, combined with the absence of neuronal or viral-specific motifs, points to a **microneme-localized** membrane protein.
 
-**answer: D**</pre>
+2. answer: B</pre>
 
 **Teacher’s full saved answer:**
 
-<pre>1. reasoning: The sequence is a soluble, roughly 500-residue enzyme with a likely multidomain architecture consistent with an ATP-dependent, glutamine-utilizing ligase. That fits EC 6.3.5.1, glutamine-dependent NAD⁺ synthetase. The sequence lacks the membrane-spanning hydrophobic regions expected for option D, and the other options describe different reaction classes.
-2. answer: C</pre>
+<pre>1. reasoning: The sequence is a compact, enzyme-like protein with no obvious N-terminal signal peptide, transmembrane segment, or other targeting feature suggesting secretion or membrane insertion. It therefore fits a soluble intracellular protein. Among the choices, the cytosol is the most likely location; the specialized compartments listed would generally require targeting or membrane-associated features not apparent here.
+2. answer: A</pre>
 
 </details>
 
