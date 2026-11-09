@@ -3,10 +3,10 @@
 | Model or training approach | Training examples | Teacher | Accuracy |
 |---|---:|---|---:|
 | **Our trained Qwen3.5-4B** | | |  |
-| Scaled questions | 124,000 | Flash-Next, low | 42.83% |
-| Original questions | 10,000 | Flash-Next, low | 37.63% |
-| Original questions | 10,000 | Flash-Next, xhigh | 32.32% |
-| Skill-guided: 5,000 standard + 5,000 skill-guided questions | 10,000 | Flash-Next, low |  |
+| Original questions | 10,000 | Flash-Next, low | 39.63% |
+| Original questions | 10,000 | Flash-Next, xhigh | 35.32% |
+| Skill-guided: 5,000 standard + 5,000 skill-guided questions | 10,000 | Flash-Next, low | 42.53% |
+| Scaled questions | 124,000 | Flash-Next, low | 45.83% |
 | **Other models: our evaluations** | | |  |
 | [GPT-6 Luna, high](LIVEPROTEINBENCH_GPT6_LUNA_HIGH32K_RESULT.md) | | | 68.28% |
 | Qwen3.8 Flash-Next, xhigh | | | 50.96% |
@@ -25,5 +25,6 @@
 
 ## Next steps
 
-- **Inject more biological knowledge.** Generate synthetic documents from our existing resources for mid-training or post-training. One method to try is [Synthetic Mixed Training](https://arxiv.org/abs/2603.23562).
-- **Explore code for biological reasoning.** Code is widely used in language model training and may support reasoning across domains. Why has it been used less for biological reasoning, and could it help here?
+- **Apply skill-guided training on scaled questions** Keep the same amount of total QA pairs and see if skill-guided QA training also helps for larger scales
+- **Inject more biological knowledge** Generate (synthetic) documents from our existing resources (PMC papers, the bio collection, FineWeb-Edu) for mid-training or post-training. Maybe try something like [Synthetic Mixed Training](https://arxiv.org/abs/2603.23562)?
+- **A random thought** Code is heavily used in language model training and seems to be generalize across reasoning domains. Could we do something similar for biological reasoning?
