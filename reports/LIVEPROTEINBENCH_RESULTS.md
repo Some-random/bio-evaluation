@@ -3,8 +3,9 @@
 | Model or training approach | Training examples | Teacher | Accuracy |
 |---|---:|---|---:|
 | **Our trained Qwen3.5-4B** | | |  |
+| Original questions | 10,000 | GPT-6-Luna | 33.32% |
+| Original questions | 10,000 | Flash-Next, xhigh | 36.32% |
 | Original questions | 10,000 | Flash-Next, low | 39.63% |
-| Original questions | 10,000 | Flash-Next, xhigh | 35.32% |
 | Skill-guided: 5,000 standard + 5,000 skill-guided questions | 10,000 | Flash-Next, low | 42.53% |
 | Scaled questions | 124,000 | Flash-Next, low | 45.83% |
 | **Off-the-shelf models: our evaluations** | | |  |
