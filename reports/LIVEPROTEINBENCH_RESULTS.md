@@ -7,12 +7,12 @@
 | Original questions | 10,000 | Flash-Next, xhigh | 35.32% |
 | Skill-guided: 5,000 standard + 5,000 skill-guided questions | 10,000 | Flash-Next, low | 42.53% |
 | Scaled questions | 124,000 | Flash-Next, low | 45.83% |
-| **Other models: our evaluations** | | |  |
-| [GPT-6 Luna, high](LIVEPROTEINBENCH_GPT6_LUNA_HIGH32K_RESULT.md) | | | 68.28% |
-| Qwen3.8 Flash-Next, xhigh | | | 50.96% |
-| Qwen3.8 Flash-Next, low | | | 51.14% |
-| [Qwen3.8-27B, thinking off](LIVEPROTEINBENCH_QWEN27B_OWN_OUTPUT_RESULT.md) | | | 35.84% |
-| Qwen3.5-4B | | | 32.62% |
+| **Off-the-shelf models: our evaluations** | | |  |
+| Qwen3.5-4B (student) | | | 32.62% |
+| Qwen3.8 Flash-Next, low (teacher) | | | 51.14% |
+| Qwen3.8 Flash-Next, xhigh (teacher) | | | 50.96% |
+| Qwen3.8-27B, thinking off | | | 35.84% |
+| GPT-6 Luna, high | | | 68.28% |
 | **Other models: reported by the benchmark paper** | | |  |
 | [GPT-5](https://arxiv.org/html/2512.22257v1#A4.T5) | | | 60.49% |
 | [OpenAI o3](https://arxiv.org/html/2512.22257v1#A4.T5) | | | 56.04% |
