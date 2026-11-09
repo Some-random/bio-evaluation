@@ -4,67 +4,9 @@ We reviewed the questions in our evaluation set to understand whether the benchm
 
 ## Are the questions reliable?
 
-GPT-6 Luna and Qwen3.8 Flash-Next (NVFP4) reviewed the questions and identified three types of findings:
+GPT-6 Luna and Qwen3.8 Flash-Next (NVFP4) reviewed the questions.
 
-- **Multiple defensible choices: 4.95%.** Both reviewers listed at least two defensible choices.
-- **Lookup or recall about the specific protein: 3.00%.** Both reviewers said answering requires a fact about the particular protein beyond general biological knowledge.
-- **Answer-key contradictions: 0.69%.** Both reviewers judged the author’s answer contradicted by the evidence.
-
-These numbers report reviewer judgments. The categories overlap.
-
-<details>
-<summary>Example: a protein that can both cut and transfer</summary>
-
-**Task:** Choose the protein’s molecular function.
-
-**Original task description:** The current task is about Gene Ontology (GO) Molecular Function Prediction, which is to predict the fundamental activity of a protein at the molecular level, as defined by the Gene Ontology (GO) 'Molecular Function' branch. This describes the elemental tasks a protein performs, such as catalysis, transport, or binding to specific molecules. Based on the protein's amino acid sequence, you are to select the option that best describes its primary molecular function..
-
-**Protein sequence:**
-
-```text
-MRSSTISASAVVLLSGLASAQTFTDCNPTEKTCPSDPAIGGLQVTDFTAGKSSYWEVEDGTTMSYDGTLGAQFVISTATDAPTIKNIGYIMFGRIETWVRASAGTGIVSSFILESDDLDEIDWEWLGANNAEAENNFFGKGNTTTYDRAQYPAVATPIDTFHNYTIDWTAKSTIWYIDGVAVRTLLYDDKQTVGGKNYPQTPMLVKMGSWIGCASKAAETDSATAGTCSWAGGAVDLTQGPFTMYVKNVTIQDYGCATEYTYGDLTGDYTSIKATGGCSADGSAASPSASSSSAASGSSSSTKSSSGSSTLSTVTGTTSAIAVGTATGTATLSAGEKATAAAISGSTTSSSTIAKVTTTSDANSLKKPKHEYGMIDLGVMVLGLGLGYLVM
-```
-
-**Choices, explained in simpler language:**
-
-- A. Break down GTP, an energy-carrying molecule *(GTPase activity)*.
-- B. Transfer sugar units from one molecule to another *(glycosyltransferase activity)*.
-- C. Store nutrients *(nutrient reservoir activity)*.
-- D. Cut chemical bonds involving sugars *(hydrolase activity, acting on glycosyl bonds)*.
-
-The explanations before the parentheses are paraphrases; the original choices are in parentheses.
-
-**Author’s answer:** B.
-
-**Why it was flagged:** Both reviewers pointed to an annotation describing a protein that can both **cut chitin**, a sugar-containing material, and **transfer chitin to another molecule**. Both listed B and D as defensible.
-
-</details>
-
-<details>
-<summary>Example: distinguishing nearby temperatures</summary>
-
-**Task:** Choose the protein’s optimal temperature.
-
-**Original task description:** The current task is about Protein Thermal Adaptation Prediction, which is to predict the thermal adaptation category of a protein. This relates to the optimal temperature range in which the protein is stable and functional (e.g., cold-adapted, moderate temperature-adapted, or heat-adapted). This property is encoded by subtle patterns in the amino acid sequence that affect the protein's structural stability, such as amino acid composition and the potential for internal bonds. Based on the provided sequence, you must classify the protein into its most likely thermal category..
-
-**Protein sequence:**
-
-```text
-MDLLQILLAIAGLLAILLLQKQWRTKTSPGAKAGRKLPPEPAGAWPVIGHLHKLGGPNPIYRNLAEWSDKYGPVMTLKLGMQNAVVVSDREAIKECFTTNDKALADRPPSSIGLHLGFNYAAIGAAPYGPYWRDMRKLVLLEVLSSRRLEMLRNVRISEIGTSIKELYSNIIRSSGGSGPAKVVISHWIEQLTLNYILRTIAGRRFSDDSSKDAQYVKGVINDFMYFAGQFVVSDVIPIPLLRWLDPQGHLKGMKRVAKEVDTMCEAWIQEHVQRRMREKPGPGQEQDFIDVLLNNRDVMRKAQEEIDNHVGKERWVDETDLKHLVYLQAIVKEGLRLYPPGPLGAPHRAIEDCQVGGYFIPKGTQLLVNVWKLHRDPRVWSEPEKFMPERFLTRQAEVDVFGHHFELLPFGSGRRACPGITFAVQVMHLTVARLLQGFDMTTPSNLPVDMTEGPGVTMPKAHPVEVLMMPRLPSALYEP
-```
-
-**Choices:**
-
-- A. 24–29°C
-- B. 30°C
-- C. 56°C
-- D. 34°C
-
-**Author’s answer:** B, 30°C.
-
-**Why it was flagged:** The reviewers said sequence and family knowledge might suggest a moderate temperature, but did not distinguish 30°C from 34°C or the nearby range.
-
-</details>
+- Both reviewers flagged questions with **multiple defensible answers (4.95%)**, questions requiring **protein-specific lookup or recall (3.00%)**, and **answer keys contradicted by the evidence (0.69%)**. These categories overlap.
 
 <details>
 <summary>Example: the answer says steroid breakdown, but the evidence points to sugar breakdown</summary>
@@ -94,50 +36,87 @@ MAAVGRYSGKVVVVTGGSRGIGAAIVRAFVDSGAQVVFCDKDEAGGRAVEQELLGTVFIPGDVTQEGDLQTLISETVSRF
 
 </details>
 
-[See all questions flagged for multiple defensible choices](multiple_defensible_by_both_86_20261104.md) · [See all questions flagged as lookup-dependent](lookup_dependent_52_20261104.md) · [See answer-key exceptions](../LIVEPROTEINBENCH_ANSWER_KEY_EXCEPTIONS.md)
+## What problems does our trained model run into?
 
-## What problems does Qwen 4B run into?
-
-Looking at saved answers reveals specific issues in how Qwen 4B reads a protein sequence and interprets the answer choices.
+To investigate errors in our trained Qwen 4B model, we compared its answers with a teacher’s answers on questions where the teacher matched the benchmark answer and the student did not. The student answers are from epoch 5 of the original Flash-Next low-reasoning training run. GPT-6.1 Terra compared the saved answers and extracted **1,289 skill descriptions** across protein-problem categories. This comparison was inspired by [DeltaPrompts](https://arxiv.org/html/2605.15532v3).
 
 <details>
-<summary>Example: reading the supplied sequence incorrectly</summary>
+<summary>Example: reading what is actually in the protein sequence</summary>
 
-**Issue:** The model miscounts residues and reports the wrong sequence at the requested positions.
+**Skill:** Check that a proposed sequence fragment is actually present before using it to identify the protein.
 
-**Task:** Choose the position of a protein motif.
-
-**Original task description:** The current task is about Protein Motif Position Prediction, which is to identify the specific positions of a conserved motif within a protein sequence. A motif is a short, recurring pattern in protein sequences that is often associated with a specific function or structure. Based on the provided protein sequence, you will need to determine the start and end positions of the motif..
+**Original task description:** The current task is about Enzyme Commission (EC) Number Prediction, which is to predict the complete 4-digit Enzyme Commission (EC) number for a given protein. The EC number is a numerical classification that categorizes enzymes based on the chemical reactions they catalyze. You should select the most accurate EC number from the provided options based on the protein's sequence..
 
 **Protein sequence:**
 
 ```text
-MHLSTALFSAIALLAATQVIGASVEVPRDVAAIQIATSPYYACNCPNNCKHKKGSGCKYHSGPSDKSKVISGKCEWQGGQLNCIAT
+MRTCGTSSEGQDECCLYGLSAMQGWRISMEDAHAAVLDLQAKSTGGSEKPTDPDKRLAFFGVYDGHGGDKVALFAGENVHKIVAKQEAFAKGDIEQALKDGFLATDRAILEDPKYEEEVSGCTAAVSVISKNKIWVANAGDSRSVLGVKGRAKPLSFDHKPQNEGEKARISAAGGFVDFGRVNGNLALSRAIGDFEFKKSPELSPEQQIVTAYPDVTVHEVTDDDEFLVIACDGIWDCQSSQSVVEFVRRGIAAKQELYRICENMMDNCLASNSETGGVGCDNMTMIIIGLLNGKTKEEWYNQISERVANGDGPCAPPEYGKSEFRGPGIRNQFEETPDNYDLENDRSRGFSVRSGRIILLGDGTELIPEQNDEELFDQREENRDVTNHLQHDKAEETSTAANLSESPSSANKNSSGSGTEATEKSASS
 ```
 
-**Choices:**
+**Original choices:**
 
-- A. 72–83
-- B. 535–543
-- C. 206–213
-- D. 8–15
+```text
+A. 3.1.1.4
+B. 1.1.1.336
+C. 3.1.3.16
+D. 2.7.7.43
+```
 
-**Author’s answer:** A, 72–83.
+**Author’s answer:** C, EC 3.1.3.16.
 
-**Teacher’s saved answer:** A. It counted 86 residues and reported that positions 72–83 contain `GKCEWQGGQLNC`. It noted that the question did not specify the motif.
+**What happened:** Our trained model said the sequence contained `GADAHHAAVL` and used that claim in its protein-family identification. That fragment is not present in the supplied sequence. The teacher cited `DGHGG`, which is present. The trained model chose D; the teacher chose C.
 
-**Qwen 4B’s saved answer:** D. It reported 85 residues and selected the 8–15 region. For positions 72–83, it reported `KCEWQGGQLNCIAT`—14 residues for a 12-residue range.
+**Our trained model’s full saved answer:**
 
-**What this illustrates:** Qwen made counting and transcription errors when reading the sequence. The question also did not specify the motif.
+<pre>## Analysis of the Protein Sequence
+
+### Step 1: Identifying Key Structural Motifs
+
+Upon examining the ~420 amino acid protein sequence, I identified several distinctive features:
+
+1. **GAddH domain(s)**: The N-terminal region contains &quot;GADAHHAAVL&quot; and the C-terminal region contains &quot;IILLGDGTE&quot; — hallmarks of GAddH (Glycine-aspartic acid-Ash-LeuHis) domain proteins.
+
+2. **Zinc-binding/Cysteine-rich motif**: &quot;CDGIWDCQSSQSVVEF&quot; — the conserved cysteine residues suggest a zinc-binding domain.
+
+3. **Additional GAddH-like region**: &quot;GGVGCDNMTMIIIGLLNGK&quot; near residues 250-280, indicating a second GAddH fold.
+
+### Step 2: Biological Context
+
+The multi-domain architecture (N-terminal GAddH + central CDGIWDC motif + C-terminal GAddH-like) is characteristic of the **GAddH domain superfamily**, which includes:
+- Primases
+- Nuclease X (Bacillus subtilis, ~500 aa)
+- Mismatch repair proteins
+
+Proteins in this superfamily commonly exhibit **transferase/phosphatase** activity on acid anhydride bonds (particularly phosphodiester bonds).
+
+### Step 3: Evaluating Options
+
+| Option | EC | Assessment |
+|--------|-----|------------|
+| A. 3.1.1.4 | β-lactamase (esterase) | No Ser-His-Arg triad; wrong domain architecture |
+| B. 1.1.1.336 | Methyltransferase | No Rossmann-fold or catalytic methyltransferase motifs present |
+| C. 3.1.3.16 | DNA mutase | Typically &gt;1000 aa; wrong enzyme class entirely |
+| D. 2.7.7.43 | Transferase acting on acid anhydrides | Consistent with GAddH-domain nuclease/phosphatase activity |
+
+### Step 4: Reasoning for Final Answer
+
+The protein&#x27;s domain composition (two GAddH folds flanking a zinc/Cys-rich module), intermediate size (~420 aa), and characteristic loop patterns are highly consistent with a **transferase acting on acid anhydrides** — a GAddH-domain protein that catalyzes reactions involving phosphodiester or analogous anhydride bonds. None of the other options match the structural or functional profile of this protein.
+
+## Final Answer
+
+**D**</pre>
+
+**Teacher’s full saved answer:**
+
+<pre>1. reasoning: The sequence contains a conserved metal-dependent phosphatase-like catalytic region, including the prominent **DGHGG** motif and additional conserved Asp/Gly-rich segments. Its C-terminal low-complexity region is also consistent with a regulatory phosphatase protein. This supports a protein phosphatase function (EC 3.1.3.16), rather than a lipase, oxidoreductase, or nucleotidyltransferase.
+2. answer: C</pre>
 
 </details>
 
 <details>
-<summary>Example: misunderstanding what an answer choice means</summary>
+<summary>Example: interpreting an EC number</summary>
 
-**Issue:** The model assigns the wrong biological activity to an enzyme number and evaluates that mistaken activity against the sequence.
-
-**Task:** Choose the protein’s enzyme classification.
+**Skill:** Connect an EC number to the specific enzyme activity it describes.
 
 **Original task description:** The current task is about Enzyme Commission (EC) Number Prediction, which is to predict the complete 4-digit Enzyme Commission (EC) number for a given protein. The EC number is a numerical classification that categorizes enzymes based on the chemical reactions they catalyze. You should select the most accurate EC number from the provided options based on the protein's sequence..
 
@@ -147,26 +126,65 @@ MHLSTALFSAIALLAATQVIGASVEVPRDVAAIQIATSPYYACNCPNNCKHKKGSGCKYHSGPSDKSKVISGKCEWQGGQ
 MMESAVTAHTLRIAMAQFDFPVGAVTQNTDRIIEYIAAARDEFEADIVLFPELAISGYPPEDLLLRPGFLAHCEQALARIAAATRGIVAVVGWPQSAGSVVYNAASVLREGRIEATYRKRELPNYAVFDERRYFDVDPDGDNCVVTVKGVQVGVVICEDLWFAEPLAKTVQAGAELVLVPNASPYERGKHAQRDALLAERTRESGAAIAYLNVVGGQDALVFDGASVVADGDGTVHPAAAAFVDQWLVVDYAAGERSFTPVVWVDDGDESMDALAWRAVVRGLKDYCGKNGFRKVWLGLSGGIDSALVLAMAVDALGGENVTAVRLPSRYTAGLSNDLADEQCRALGVKLETIAIEPAFEGLLAALGPLFADTQPDITEENLQSRSRGVILMALSNKFGGLVLTTGNKSEYAVGYATIYGDMCGGYAPLKDLYKTEVFGLAKWRNTVGGAPVIPPAVISRPPSAELRDNQTDQDSLPPYDVLDGILYRYVDQEQSRDDIVAAGYAADTVEHVLRLVRLNEWKRHQAAPGPKVSRRAFGRERRYPITNGYSGQ
 ```
 
-**Choices:**
+**Original choices:**
 
-- A. EC 5.6.2.4
-- B. EC 2.3.1.193
-- C. EC 6.3.5.1
-- D. EC 1.14.19.80
+```text
+A. 5.6.2.4
+B. 2.3.1.193
+C. 6.3.5.1
+D. 1.14.19.80
+```
 
 **Author’s answer:** C, EC 6.3.5.1.
 
-**Teacher’s saved answer:** C. It described EC 6.3.5.1 as glutamine-dependent NAD⁺ synthetase.
+**What happened:** The teacher identified choice C as NAD synthase. Our trained model instead called it an ATP-dependent DNA ligase, checked for DNA-ligase features, and selected D.
 
-**Qwen 4B’s saved answer:** D. It described option C as an ATP-dependent DNA ligase and rejected it using claimed DNA-ligase features.
+**What the names mean:** DNA ligase joins pieces of DNA. NAD synthase helps make NAD⁺, a small helper molecule used in cell metabolism. EC 6.3.5.1 is the classification for a type of NAD synthase. An EC number describes an enzyme activity; learning or looking up what the code means supplies general knowledge about the choice, rather than identifying the particular protein in the question. [EC 6.3.5.1 reference](https://enzyme.expasy.org/EC/6.3.5.1)
 
-**What this illustrates:** Qwen described the choice as a DNA ligase and evaluated it using DNA-ligase features. Understanding what each option means is a separate challenge from reading the protein sequence.
+**Our trained model’s full saved answer:**
+
+<pre>## Analysis of the Protein Sequence for EC Number Prediction
+
+### Step 1: Analyze Protein Sequence Characteristics
+
+**Length:** ~450 amino acids
+**Key structural motifs identified:**
+- **N-terminal Rossmann-like fold**: `GWPQSAGS` (GxGxxG-type nucleotide/cofactor binding motif) — characteristic of NAD(P)-dependent oxidoreductases
+- **&quot;GDS&quot; motif** (~position 380): associated with catalytic sites in certain oxidoreductase families
+- **&quot;GKNFG&quot;**: possible metal-binding or catalytic residue environment
+- **Overall topology**: Two-domain architecture (N-terminal cofactor-binding + C-terminal catalytic domain)
+
+### Step 2: Evaluate Each Option
+
+| Option | EC Number | Enzyme Class | Compatibility? |
+|--------|-----------|-------------|----------------|
+| A | 5.6.2.4 | Transferase (hydroxyalkyl) | ❌ No transferase motifs (no conserved catalytic triad or reactive center typical of transferases) |
+| B | 2.3.1.193 | Acyl transferase | ❌ No acyl-CoA/acyl-group processing motifs (no HxHC, no thioesterase active site) |
+| C | 6.3.5.1 | DNA Ligase (ATP-dependent) | ❌ Lacks ADP/ATP-binding domain (e.g., VAIK motif), lacks KxDxG motif essential for adenylate linkage |
+| D | 1.14.19.80 | Oxidoreductase (ascorbate:Fe²⁺ oxidoreductase) | ✅ Strong match |
+
+### Step 3: Reasoning
+
+The Rossmann-like fold at the N-terminus (`GWPQSAGS`) is the hallmark of NAD(P)-dependent oxidoreductases. Among the four options, **only EC 1.14.19.80** belongs to the oxidoreductase family (EC 1.x.x.x). 
+
+- Options A (5.6.2.4) and B (2.3.1.193) are transferases — the sequence lacks any conserved transferase catalytic motifs (e.g., conserved acidic residues, thiol/tryptophan catalytic sites).
+- Option C (6.3.5.1) is a DNA ligase — DNA ligases are characterized by distinct NTP-binding motifs (VAIK, KxDG), which are completely absent here.
+- Option D (1.14.19.80) describes an oxido-reductase using ascorbate as electron acceptor — the Rossmann fold + C-terminal catalytic domain architecture is fully consistent with this assignment.
+
+### Step 4: Final Answer
+
+The protein&#x27;s domain architecture (Rossmann fold + catalytic domain) and absence of non-oxidoreductase features strongly support classification as an ascorbate:iron(II) oxidoreductase.
+
+**answer: D**</pre>
+
+**Teacher’s full saved answer:**
+
+<pre>1. reasoning: The sequence is a soluble, roughly 500-residue enzyme with a likely multidomain architecture consistent with an ATP-dependent, glutamine-utilizing ligase. That fits EC 6.3.5.1, glutamine-dependent NAD⁺ synthetase. The sequence lacks the membrane-spanning hydrophobic regions expected for option D, and the other options describe different reaction classes.
+2. answer: C</pre>
 
 </details>
 
-### From model errors to targeted training questions
-
-To investigate these errors, we selected questions where the teacher answered correctly and Qwen 4B answered incorrectly. GPT-6.1 Terra compared their saved answers and extracted **1,289 skill descriptions** across protein-problem categories. Inspired by [DeltaPrompts](https://arxiv.org/html/2605.15532v3), we use these descriptions to generate more targeted protein questions.
+### Using the skills
 
 We start with synthetic protein questions, answers, and reasoning generated by Qwen Flash-Next, and generate new questions targeted to the identified skills. We compare teacher and Qwen 4B answers and select questions where the teacher consistently chooses a supported answer and Qwen 4B is wrong. GPT-Luna reviews the selected questions and answers.
 
@@ -175,3 +193,4 @@ We start with synthetic protein questions, answers, and reasoning generated by Q
 As AI-for-science problems move closer to the research frontier, the correct answer may not yet be known—even to experts—and verifying it may require expensive experiments or simulations. Comparing a wrong teacher answer with a wrong student answer can reveal differences, but it does not tell us which difference is useful to learn from.
 
 One direction is to combine model-generated hypotheses with checks from scientific literature, known biological constraints, simulations, and experiments. Expert or experimental review could focus on the most informative cases. The central question is how to turn these partial and sometimes costly signals into reliable training feedback.
+
