@@ -14,15 +14,24 @@
 | Qwen3.8 Flash-Next, xhigh (teacher) | | | 50.96% |
 | Qwen3.8-27B, thinking off | | | 35.84% |
 | GPT-6 Luna, high | | | 68.28% |
-| **Other models: reported by the benchmark paper** | | |  |
-| [GPT-5](https://arxiv.org/html/2512.22257v1#A4.T5) | | | 60.49% |
-| [OpenAI o3](https://arxiv.org/html/2512.22257v1#A4.T5) | | | 56.04% |
-| [Claude 3.7 Sonnet, thinking off](https://arxiv.org/html/2512.22257v1#A4.T5) | | | 51.47% |
-| [Gemini 2.5 Pro](https://arxiv.org/html/2512.22257v1#A4.T5) | | | 43.85% |
-| [Gemini 2.0 Flash](https://arxiv.org/html/2512.22257v1#A4.T5) | | | 43.07% |
-| [GPT-4o](https://arxiv.org/html/2512.22257v1#A4.T5) | | | 38.39% |
-| [Qwen2.5-VL-32B](https://arxiv.org/html/2512.22257v1#A4.T5) | | | 33.05% |
-| [InternVL3-78B](https://arxiv.org/html/2512.22257v1#A4.T5) | | | 23.37% |
+
+<details>
+<summary>More models</summary>
+
+Reported by the benchmark paper:
+
+| Model | Accuracy |
+|---|---:|
+| [GPT-5](https://arxiv.org/html/2512.22257v1#A4.T5) | 60.49% |
+| [OpenAI o3](https://arxiv.org/html/2512.22257v1#A4.T5) | 56.04% |
+| [Claude 3.7 Sonnet, thinking off](https://arxiv.org/html/2512.22257v1#A4.T5) | 51.47% |
+| [Gemini 2.5 Pro](https://arxiv.org/html/2512.22257v1#A4.T5) | 43.85% |
+| [Gemini 2.0 Flash](https://arxiv.org/html/2512.22257v1#A4.T5) | 43.07% |
+| [GPT-4o](https://arxiv.org/html/2512.22257v1#A4.T5) | 38.39% |
+| [Qwen2.5-VL-32B](https://arxiv.org/html/2512.22257v1#A4.T5) | 33.05% |
+| [InternVL3-78B](https://arxiv.org/html/2512.22257v1#A4.T5) | 23.37% |
+
+</details>
 
 ## Next steps
 
