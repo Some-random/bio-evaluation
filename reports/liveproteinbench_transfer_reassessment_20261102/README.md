@@ -1,1431 +1,159 @@
 # LiveProteinBench: evaluating the evaluation
 
-## What are we checking?
+We reviewed the questions in our evaluation set to understand whether the benchmark can be scored reliably. We also compared model answers to identify skills that could guide protein training data.
 
-LiveProteinBench asks models to choose one answer to each protein question. This review asks whether the author's answer is supported, whether a question can be answered using transferable biological knowledge, and whether its choices may admit more than one defensible answer. It evaluates the **questions**, not model-solving performance.
+## Are the questions reliable?
 
-GPT-6 Luna and Qwen3.8 Flash-Next reviewed **1,736 of 1,797** original questions with cached evidence; 61 were outside the review. Some questions were reassessed on November 4 after an earlier flag. The results below combine review rounds and model judgments; they are not expert adjudication or a uniform rerun.
+Two AI reviewers identified three types of questions for inspection:
 
-## What did the reviews find?
+- **Possible multiple answers: 4.95%.**
+- **A protein-specific fact may be needed: 3.00%.**
+- **The answer key may conflict with the evidence: 0.69%.**
 
-| Finding | Questions | Share of 1,736 | Meaning |
-|---|---:|---:|---|
-| Both supported the author key | 1,679 | 96.72% | The reviewers considered the saved evidence supportive; this does not prove the key is uniquely correct. |
-| Both marked the author key contradicted | 12 | 0.69% | The reviewers considered the evidence inconsistent with the key; these need inspection. |
-| Both labeled the question lookup-dependent | 52 | 3.00% | Candidate exclusions from a reasoning-focused score, not proven impossible to solve by reasoning. [See all 52](lookup_dependent_52_20261104.md). |
-| Both listed at least two defensible choices | 86 | 4.95% | Possible answer-choice problems to check; the listed alternatives are not automatically correct. [See all 86](multiple_defensible_by_both_86_20261104.md). |
-
-These rows measure different things and cannot be added together. Two questions appear in both the 52 and 86 lists. For four of the 86, the reviewers listed different sets with fewer than two choices in common. The findings do not establish a whole-benchmark rate of confirmed ambiguous questions.
-
-For the answerability review, both reviewers selected reasoning-supported on 1,427 questions, both selected lookup-dependent on 52, one selected each on 179, at least one was uncertain on 77, and one question had an unusable review. These categories total 1,736.
-
-## How could these reviews inform an evaluation?
-
-The [evaluation handoff](../../handoff/liveproteinbench_question_review_20261104.md) lists the proposed 52 exclusions and each reviewer's candidate choices for all 86 flagged questions. It recommends preserving the original score, reporting any adjusted score separately, and checking the evidence before accepting additional answers. Removing the 52 leaves 1,684 reviewed questions, of which 84 still appear on the multiple-choice flag list. The remaining questions have not all been independently verified.
-
-## Examples
+These are reviewer flags, not confirmed error rates. The categories overlap.
 
 <details>
-<summary>Magnesium and manganese are both listed — cofactor_0135</summary>
+<summary>Example: a protein that can both cut and transfer</summary>
 
-**Choices**
+**Task:** Choose the protein’s molecular function.
+
+**Protein sequence:**
 
 ```text
-A. heme
-B. Zn(2+)
-C. Mn(2+)
-D. Mg(2+)
+MRSSTISASAVVLLSGLASAQTFTDCNPTEKTCPSDPAIGGLQVTDFTAGKSSYWEVEDGTTMSYDGTLGAQFVISTATDAPTIKNIGYIMFGRIETWVRASAGTGIVSSFILESDDLDEIDWEWLGANNAEAENNFFGKGNTTTYDRAQYPAVATPIDTFHNYTIDWTAKSTIWYIDGVAVRTLLYDDKQTVGGKNYPQTPMLVKMGSWIGCASKAAETDSATAGTCSWAGGAVDLTQGPFTMYVKNVTIQDYGCATEYTYGDLTGDYTSIKATGGCSADGSAASPSASSSSAASGSSSSTKSSSGSSTLSTVTGTTSAIAVGTATGTATLSAGEKATAAAISGSTTSSSTIAKVTTTSDANSLKKPKHEYGMIDLGVMVLGLGLGYLVM
 ```
 
-**Author key:** D. Mg(2+)
+**Choices, explained in simpler language:**
 
-The author key is D (Mg²⁺), while C is Mn²⁺. Both reviewers point to the matched annotation saying the protein can bind Mg²⁺ or Mn²⁺, making both candidate answers worth checking. The cited annotation is inferred by similarity rather than a direct measurement on this protein.
+- A. Break down GTP, an energy-carrying molecule *(GTPase activity)*.
+- B. Transfer sugar units from one molecule to another *(glycosyltransferase activity)*.
+- C. Store nutrients *(nutrient reservoir activity)*.
+- D. Cut chemical bonds involving sugars *(hydrolase activity, acting on glycosyl bonds)*.
 
-[Full question, both saved reviews, and evidence](multiple_defensible_by_both_86_20261104.md#case-cofactor_0135)
+The explanations before the parentheses are paraphrases; the original choices are in parentheses.
+
+**Author’s answer:** B.
+
+**Why it was flagged:** Both reviewers pointed to an annotation describing a protein that can both **cut chitin**, a sugar-containing material, and **transfer chitin to another molecule**. That makes both B and D worth examining. The strength and scope of the underlying evidence still matter.
 
 </details>
 
 <details>
-<summary>Why both reviewers flagged a lookup concern — EC_number_0005</summary>
+<summary>Example: distinguishing nearby temperatures</summary>
 
-**Choices**
+**Task:** Choose the protein’s optimal temperature.
+
+**Protein sequence:**
 
 ```text
-A. 1.1.1.440
-B. 1.1.1.195
-C. 2.7.11.24
-D. 1.14.15.9
+MDLLQILLAIAGLLAILLLQKQWRTKTSPGAKAGRKLPPEPAGAWPVIGHLHKLGGPNPIYRNLAEWSDKYGPVMTLKLGMQNAVVVSDREAIKECFTTNDKALADRPPSSIGLHLGFNYAAIGAAPYGPYWRDMRKLVLLEVLSSRRLEMLRNVRISEIGTSIKELYSNIIRSSGGSGPAKVVISHWIEQLTLNYILRTIAGRRFSDDSSKDAQYVKGVINDFMYFAGQFVVSDVIPIPLLRWLDPQGHLKGMKRVAKEVDTMCEAWIQEHVQRRMREKPGPGQEQDFIDVLLNNRDVMRKAQEEIDNHVGKERWVDETDLKHLVYLQAIVKEGLRLYPPGPLGAPHRAIEDCQVGGYFIPKGTQLLVNVWKLHRDPRVWSEPEKFMPERFLTRQAEVDVFGHHFELLPFGSGRRACPGITFAVQVMHLTVARLLQGFDMTTPSNLPVDMTEGPGVTMPKAHPVEVLMMPRLPSALYEP
 ```
 
-**Author key:** A. 1.1.1.440
+**Choices:**
 
-The author key is A (EC 1.1.1.440). Both reviewers say the sequence can support a broad oxidoreductase class but that they do not find a clear transferable basis to choose between A and B, which specify different activities. The matched annotation supports A; the reviewers’ assessment does not prove that a biological inference could not distinguish the choices.
+- A. 24–29°C
+- B. 30°C
+- C. 56°C
+- D. 34°C
 
-[Full question, both saved reviews, and evidence](lookup_dependent_52_20261104.md#case-ec_number_0005)
+**Author’s answer:** B, 30°C.
+
+**Why it was flagged:** The reviewers thought that sequence and family knowledge might suggest a moderate temperature, but they did not find a clear basis in the question to distinguish 30°C from 34°C or the nearby range. This is a reviewer judgment, not proof that the answer cannot be inferred.
 
 </details>
-
-## How to inspect the work
-
-- [All 52 lookup-flagged questions](lookup_dependent_52_20261104.md): original inputs, author key, both saved reviews and links to evidence.
-- [All 86 multiple-choice flags](multiple_defensible_by_both_86_20261104.md): each reviewer’s listed options, complete saved reviews and evidence links.
-- [Earlier question review and evidence](../liveproteinbench_question_reviews_20261101/README.md).
-- [Original 1,328-question method](METHOD.md) and [reviewer instructions](REVIEWER_PROMPTS.md). These describe the earlier round, not every later reassessment.
-
-The paper describes single-answer multiple-choice scoring and database-derived ground truth, but does not specify a distractor-generation procedure in its dataset-construction section or appendix. [LiveProteinBench paper](https://arxiv.org/html/2512.22257v1).
 
 <details>
-<summary>Historical November 2 report: 1,328-question reassessment</summary>
+<summary>Example: a location that may not be among the choices</summary>
 
-# LiveProteinBench: reasoning versus lookup
+**Task:** Choose where the protein is located.
 
-GPT-6 Luna and Qwen3.8-Flash-Next-NVFP4 assess **1,328 selected questions**. They check whether the evidence supports the expected answer and whether the choices can be distinguished using the question inputs and transferable biological knowledge.
+**Protein sequence:**
 
-**Reasoning-supported:** a credible inference can use knowledge about related proteins, families, conserved features or biological mechanisms. **Lookup-dependent:** choosing the answer requires a particular fact about the exact target protein that is absent from the question.
+```text
+MSLLYGLLILAFTRSCLVVGQCSINIPDDLKGEEAPVILVKTGNNVKLFRPEEKTTTFPKGTELLLACTGEGNGLKSNGQETTTLSCNGNQFESAAKEKLKDMSCKSMAKAVVEQTTKRCMGNDFNLYEAGYKVNGKFYGSVYDICYNGKGQSSGYTHNFIYGRTWKYKLPEKPYEHYSSRDPQAGKDLDKLYKEQKERFKNTKVNGKPLLDDEHYFTEGQLTPDTSIITGADKLSTYDYANIAPLFKDIYDGNIWRYENMTQELADQRQATFEEYTGGFYSYEVEKWKPIGLDNAEFPTHRVPKYIYKLVVDTESKDGIVFVTLNDPYHKSPASENLCKDICSEANINEPDFKNVEKGYTICCSYGDFGNRIRTLPKDIHVKGLLKY
+```
 
-[Summary](SUMMARY.md) · [Method and coverage](METHOD.md) · [CSV](reviews.csv) · [Full reviews and evidence](reviews.jsonl) · [Reviewer instructions](REVIEWER_PROMPTS.md)
+**Choices:**
 
-These are AI assessments of the questions, not benchmark-solving accuracy or expert confirmation.
+- A. Perikaryon
+- B. Centrosome
+- C. Nucleus
+- D. tRNA methyltransferase complex
 
-| Assessment | Questions | Share of 1,328 |
-|---|---:|---:|
-| Both reviewers: reasoning-supported | 969 | 72.97% |
-| One reasoning-supported, one lookup-dependent | 217 | 16.34% |
-| Both reviewers: lookup-dependent | 87 | 6.55% |
-| At least one uncertain; both reviews usable | 14 | 1.05% |
-| One or both reviews unusable | 41 | 3.09% |
+**Author’s answer:** C, nucleus.
 
-Open a question to see its complete inputs, expected answer, source evidence and both saved reviews. Unusable reviews remain visible and are excluded from scientific-label counts.
-
-| Question | Luna | Qwen | Agreement |
-|---|---|---|---|
-| [EC_number_0001](cases/EC_number_0001.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0002](cases/EC_number_0002.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0003](cases/EC_number_0003.md) | lookup-dependent | reasoning-supported | No |
-| [EC_number_0004](cases/EC_number_0004.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0005](cases/EC_number_0005.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0006](cases/EC_number_0006.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0007](cases/EC_number_0007.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0008](cases/EC_number_0008.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0009](cases/EC_number_0009.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0010](cases/EC_number_0010.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0011](cases/EC_number_0011.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0012](cases/EC_number_0012.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0013](cases/EC_number_0013.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0014](cases/EC_number_0014.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0016](cases/EC_number_0016.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0017](cases/EC_number_0017.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0019](cases/EC_number_0019.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0020](cases/EC_number_0020.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0021](cases/EC_number_0021.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0023](cases/EC_number_0023.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0024](cases/EC_number_0024.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0025](cases/EC_number_0025.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0026](cases/EC_number_0026.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0027](cases/EC_number_0027.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0028](cases/EC_number_0028.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0029](cases/EC_number_0029.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0032](cases/EC_number_0032.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0033](cases/EC_number_0033.md) | lookup-dependent | reasoning-supported | No |
-| [EC_number_0034](cases/EC_number_0034.md) | lookup-dependent | reasoning-supported | No |
-| [EC_number_0035](cases/EC_number_0035.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0036](cases/EC_number_0036.md) | lookup-dependent | reasoning-supported | No |
-| [EC_number_0038](cases/EC_number_0038.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0040](cases/EC_number_0040.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0041](cases/EC_number_0041.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0042](cases/EC_number_0042.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0043](cases/EC_number_0043.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0044](cases/EC_number_0044.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0045](cases/EC_number_0045.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0046](cases/EC_number_0046.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0048](cases/EC_number_0048.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0049](cases/EC_number_0049.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0050](cases/EC_number_0050.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0051](cases/EC_number_0051.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0052](cases/EC_number_0052.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0055](cases/EC_number_0055.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0056](cases/EC_number_0056.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0057](cases/EC_number_0057.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0058](cases/EC_number_0058.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0059](cases/EC_number_0059.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0060](cases/EC_number_0060.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0061](cases/EC_number_0061.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0063](cases/EC_number_0063.md) | lookup-dependent | reasoning-supported | No |
-| [EC_number_0064](cases/EC_number_0064.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0065](cases/EC_number_0065.md) | lookup-dependent | reasoning-supported | No |
-| [EC_number_0066](cases/EC_number_0066.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0067](cases/EC_number_0067.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0068](cases/EC_number_0068.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0069](cases/EC_number_0069.md) | Unusable review | reasoning-supported | Incomplete |
-| [EC_number_0070](cases/EC_number_0070.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0071](cases/EC_number_0071.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0072](cases/EC_number_0072.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0073](cases/EC_number_0073.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0074](cases/EC_number_0074.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0075](cases/EC_number_0075.md) | reasoning-supported | lookup-dependent | No |
-| [EC_number_0076](cases/EC_number_0076.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0078](cases/EC_number_0078.md) | lookup-dependent | reasoning-supported | No |
-| [EC_number_0079](cases/EC_number_0079.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0080](cases/EC_number_0080.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0081](cases/EC_number_0081.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0082](cases/EC_number_0082.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0083](cases/EC_number_0083.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0084](cases/EC_number_0084.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0085](cases/EC_number_0085.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0086](cases/EC_number_0086.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0087](cases/EC_number_0087.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0088](cases/EC_number_0088.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0089](cases/EC_number_0089.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0091](cases/EC_number_0091.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0092](cases/EC_number_0092.md) | lookup-dependent | reasoning-supported | No |
-| [EC_number_0093](cases/EC_number_0093.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0095](cases/EC_number_0095.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0096](cases/EC_number_0096.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0097](cases/EC_number_0097.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0099](cases/EC_number_0099.md) | lookup-dependent | reasoning-supported | No |
-| [EC_number_0100](cases/EC_number_0100.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0101](cases/EC_number_0101.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0102](cases/EC_number_0102.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0103](cases/EC_number_0103.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0105](cases/EC_number_0105.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0106](cases/EC_number_0106.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0107](cases/EC_number_0107.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0108](cases/EC_number_0108.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0110](cases/EC_number_0110.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0111](cases/EC_number_0111.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0112](cases/EC_number_0112.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0113](cases/EC_number_0113.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0114](cases/EC_number_0114.md) | lookup-dependent | reasoning-supported | No |
-| [EC_number_0115](cases/EC_number_0115.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0116](cases/EC_number_0116.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0117](cases/EC_number_0117.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0118](cases/EC_number_0118.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0119](cases/EC_number_0119.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0120](cases/EC_number_0120.md) | reasoning-supported | Unusable review | Incomplete |
-| [EC_number_0121](cases/EC_number_0121.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0122](cases/EC_number_0122.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0123](cases/EC_number_0123.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0124](cases/EC_number_0124.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0125](cases/EC_number_0125.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0126](cases/EC_number_0126.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0127](cases/EC_number_0127.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0128](cases/EC_number_0128.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0129](cases/EC_number_0129.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0130](cases/EC_number_0130.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0131](cases/EC_number_0131.md) | reasoning-supported | lookup-dependent | No |
-| [EC_number_0132](cases/EC_number_0132.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0133](cases/EC_number_0133.md) | lookup-dependent | reasoning-supported | No |
-| [EC_number_0134](cases/EC_number_0134.md) | lookup-dependent | reasoning-supported | No |
-| [EC_number_0135](cases/EC_number_0135.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0136](cases/EC_number_0136.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0137](cases/EC_number_0137.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0138](cases/EC_number_0138.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0140](cases/EC_number_0140.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0141](cases/EC_number_0141.md) | lookup-dependent | reasoning-supported | No |
-| [EC_number_0142](cases/EC_number_0142.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0143](cases/EC_number_0143.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0144](cases/EC_number_0144.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0145](cases/EC_number_0145.md) | lookup-dependent | reasoning-supported | No |
-| [EC_number_0146](cases/EC_number_0146.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0147](cases/EC_number_0147.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0148](cases/EC_number_0148.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0149](cases/EC_number_0149.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0150](cases/EC_number_0150.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0151](cases/EC_number_0151.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0152](cases/EC_number_0152.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0153](cases/EC_number_0153.md) | reasoning-supported | lookup-dependent | No |
-| [EC_number_0154](cases/EC_number_0154.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0155](cases/EC_number_0155.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0156](cases/EC_number_0156.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0157](cases/EC_number_0157.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0159](cases/EC_number_0159.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0160](cases/EC_number_0160.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0161](cases/EC_number_0161.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0162](cases/EC_number_0162.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0163](cases/EC_number_0163.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0164](cases/EC_number_0164.md) | lookup-dependent | reasoning-supported | No |
-| [EC_number_0165](cases/EC_number_0165.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0166](cases/EC_number_0166.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0167](cases/EC_number_0167.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0168](cases/EC_number_0168.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0169](cases/EC_number_0169.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0170](cases/EC_number_0170.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0171](cases/EC_number_0171.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0172](cases/EC_number_0172.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0173](cases/EC_number_0173.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0174](cases/EC_number_0174.md) | lookup-dependent | lookup-dependent | Yes |
-| [EC_number_0175](cases/EC_number_0175.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0176](cases/EC_number_0176.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0177](cases/EC_number_0177.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0179](cases/EC_number_0179.md) | lookup-dependent | reasoning-supported | No |
-| [EC_number_0180](cases/EC_number_0180.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0182](cases/EC_number_0182.md) | reasoning-supported | Unusable review | Incomplete |
-| [EC_number_0183](cases/EC_number_0183.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0184](cases/EC_number_0184.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0185](cases/EC_number_0185.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0186](cases/EC_number_0186.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0187](cases/EC_number_0187.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0188](cases/EC_number_0188.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0189](cases/EC_number_0189.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0190](cases/EC_number_0190.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0192](cases/EC_number_0192.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0194](cases/EC_number_0194.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0195](cases/EC_number_0195.md) | lookup-dependent | reasoning-supported | No |
-| [EC_number_0196](cases/EC_number_0196.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0197](cases/EC_number_0197.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0198](cases/EC_number_0198.md) | reasoning-supported | reasoning-supported | Yes |
-| [EC_number_0199](cases/EC_number_0199.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0000](cases/GO_biological_process_0000.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0001](cases/GO_biological_process_0001.md) | Unusable review | reasoning-supported | Incomplete |
-| [GO_biological_process_0003](cases/GO_biological_process_0003.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0005](cases/GO_biological_process_0005.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0006](cases/GO_biological_process_0006.md) | uncertain | reasoning-supported | No |
-| [GO_biological_process_0007](cases/GO_biological_process_0007.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0008](cases/GO_biological_process_0008.md) | lookup-dependent | reasoning-supported | No |
-| [GO_biological_process_0009](cases/GO_biological_process_0009.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0010](cases/GO_biological_process_0010.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0011](cases/GO_biological_process_0011.md) | lookup-dependent | reasoning-supported | No |
-| [GO_biological_process_0012](cases/GO_biological_process_0012.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0013](cases/GO_biological_process_0013.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0014](cases/GO_biological_process_0014.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0016](cases/GO_biological_process_0016.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0017](cases/GO_biological_process_0017.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0018](cases/GO_biological_process_0018.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0020](cases/GO_biological_process_0020.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0021](cases/GO_biological_process_0021.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0022](cases/GO_biological_process_0022.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0024](cases/GO_biological_process_0024.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0025](cases/GO_biological_process_0025.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0026](cases/GO_biological_process_0026.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0028](cases/GO_biological_process_0028.md) | lookup-dependent | reasoning-supported | No |
-| [GO_biological_process_0029](cases/GO_biological_process_0029.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0030](cases/GO_biological_process_0030.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0031](cases/GO_biological_process_0031.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0032](cases/GO_biological_process_0032.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0033](cases/GO_biological_process_0033.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0034](cases/GO_biological_process_0034.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0035](cases/GO_biological_process_0035.md) | lookup-dependent | reasoning-supported | No |
-| [GO_biological_process_0036](cases/GO_biological_process_0036.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0037](cases/GO_biological_process_0037.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0038](cases/GO_biological_process_0038.md) | reasoning-supported | lookup-dependent | No |
-| [GO_biological_process_0039](cases/GO_biological_process_0039.md) | lookup-dependent | reasoning-supported | No |
-| [GO_biological_process_0042](cases/GO_biological_process_0042.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0043](cases/GO_biological_process_0043.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0044](cases/GO_biological_process_0044.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0045](cases/GO_biological_process_0045.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0046](cases/GO_biological_process_0046.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0047](cases/GO_biological_process_0047.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0048](cases/GO_biological_process_0048.md) | lookup-dependent | reasoning-supported | No |
-| [GO_biological_process_0049](cases/GO_biological_process_0049.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0050](cases/GO_biological_process_0050.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0051](cases/GO_biological_process_0051.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0052](cases/GO_biological_process_0052.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0053](cases/GO_biological_process_0053.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0054](cases/GO_biological_process_0054.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0055](cases/GO_biological_process_0055.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0056](cases/GO_biological_process_0056.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0058](cases/GO_biological_process_0058.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0059](cases/GO_biological_process_0059.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0060](cases/GO_biological_process_0060.md) | lookup-dependent | reasoning-supported | No |
-| [GO_biological_process_0061](cases/GO_biological_process_0061.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0063](cases/GO_biological_process_0063.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0064](cases/GO_biological_process_0064.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0066](cases/GO_biological_process_0066.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0067](cases/GO_biological_process_0067.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0068](cases/GO_biological_process_0068.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0069](cases/GO_biological_process_0069.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0070](cases/GO_biological_process_0070.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0071](cases/GO_biological_process_0071.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0072](cases/GO_biological_process_0072.md) | lookup-dependent | reasoning-supported | No |
-| [GO_biological_process_0073](cases/GO_biological_process_0073.md) | lookup-dependent | reasoning-supported | No |
-| [GO_biological_process_0074](cases/GO_biological_process_0074.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0075](cases/GO_biological_process_0075.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0077](cases/GO_biological_process_0077.md) | Unusable review | reasoning-supported | Incomplete |
-| [GO_biological_process_0078](cases/GO_biological_process_0078.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0079](cases/GO_biological_process_0079.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0080](cases/GO_biological_process_0080.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0081](cases/GO_biological_process_0081.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0082](cases/GO_biological_process_0082.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0083](cases/GO_biological_process_0083.md) | lookup-dependent | reasoning-supported | No |
-| [GO_biological_process_0084](cases/GO_biological_process_0084.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0085](cases/GO_biological_process_0085.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0086](cases/GO_biological_process_0086.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0087](cases/GO_biological_process_0087.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0089](cases/GO_biological_process_0089.md) | lookup-dependent | lookup-dependent | Yes |
-| [GO_biological_process_0091](cases/GO_biological_process_0091.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0092](cases/GO_biological_process_0092.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0094](cases/GO_biological_process_0094.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0095](cases/GO_biological_process_0095.md) | lookup-dependent | reasoning-supported | No |
-| [GO_biological_process_0097](cases/GO_biological_process_0097.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0099](cases/GO_biological_process_0099.md) | lookup-dependent | reasoning-supported | No |
-| [GO_biological_process_0100](cases/GO_biological_process_0100.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0101](cases/GO_biological_process_0101.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0102](cases/GO_biological_process_0102.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0103](cases/GO_biological_process_0103.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0104](cases/GO_biological_process_0104.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0106](cases/GO_biological_process_0106.md) | lookup-dependent | reasoning-supported | No |
-| [GO_biological_process_0107](cases/GO_biological_process_0107.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0109](cases/GO_biological_process_0109.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0110](cases/GO_biological_process_0110.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0112](cases/GO_biological_process_0112.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0113](cases/GO_biological_process_0113.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0114](cases/GO_biological_process_0114.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0115](cases/GO_biological_process_0115.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0116](cases/GO_biological_process_0116.md) | lookup-dependent | lookup-dependent | Yes |
-| [GO_biological_process_0117](cases/GO_biological_process_0117.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0118](cases/GO_biological_process_0118.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0120](cases/GO_biological_process_0120.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0121](cases/GO_biological_process_0121.md) | lookup-dependent | reasoning-supported | No |
-| [GO_biological_process_0122](cases/GO_biological_process_0122.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0123](cases/GO_biological_process_0123.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0124](cases/GO_biological_process_0124.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0125](cases/GO_biological_process_0125.md) | lookup-dependent | reasoning-supported | No |
-| [GO_biological_process_0126](cases/GO_biological_process_0126.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0127](cases/GO_biological_process_0127.md) | lookup-dependent | reasoning-supported | No |
-| [GO_biological_process_0128](cases/GO_biological_process_0128.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0129](cases/GO_biological_process_0129.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0130](cases/GO_biological_process_0130.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0131](cases/GO_biological_process_0131.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0132](cases/GO_biological_process_0132.md) | lookup-dependent | reasoning-supported | No |
-| [GO_biological_process_0133](cases/GO_biological_process_0133.md) | lookup-dependent | reasoning-supported | No |
-| [GO_biological_process_0134](cases/GO_biological_process_0134.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0135](cases/GO_biological_process_0135.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0136](cases/GO_biological_process_0136.md) | lookup-dependent | reasoning-supported | No |
-| [GO_biological_process_0138](cases/GO_biological_process_0138.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0139](cases/GO_biological_process_0139.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0141](cases/GO_biological_process_0141.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0143](cases/GO_biological_process_0143.md) | lookup-dependent | reasoning-supported | No |
-| [GO_biological_process_0144](cases/GO_biological_process_0144.md) | lookup-dependent | lookup-dependent | Yes |
-| [GO_biological_process_0145](cases/GO_biological_process_0145.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0146](cases/GO_biological_process_0146.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0147](cases/GO_biological_process_0147.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0149](cases/GO_biological_process_0149.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0151](cases/GO_biological_process_0151.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0152](cases/GO_biological_process_0152.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0153](cases/GO_biological_process_0153.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0154](cases/GO_biological_process_0154.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0155](cases/GO_biological_process_0155.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0156](cases/GO_biological_process_0156.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0157](cases/GO_biological_process_0157.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0158](cases/GO_biological_process_0158.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0159](cases/GO_biological_process_0159.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0160](cases/GO_biological_process_0160.md) | lookup-dependent | reasoning-supported | No |
-| [GO_biological_process_0162](cases/GO_biological_process_0162.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0163](cases/GO_biological_process_0163.md) | lookup-dependent | reasoning-supported | No |
-| [GO_biological_process_0164](cases/GO_biological_process_0164.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0166](cases/GO_biological_process_0166.md) | lookup-dependent | lookup-dependent | Yes |
-| [GO_biological_process_0167](cases/GO_biological_process_0167.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0168](cases/GO_biological_process_0168.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0169](cases/GO_biological_process_0169.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0170](cases/GO_biological_process_0170.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0171](cases/GO_biological_process_0171.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0173](cases/GO_biological_process_0173.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0174](cases/GO_biological_process_0174.md) | lookup-dependent | reasoning-supported | No |
-| [GO_biological_process_0175](cases/GO_biological_process_0175.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0176](cases/GO_biological_process_0176.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0177](cases/GO_biological_process_0177.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0178](cases/GO_biological_process_0178.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0179](cases/GO_biological_process_0179.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0180](cases/GO_biological_process_0180.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0181](cases/GO_biological_process_0181.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0182](cases/GO_biological_process_0182.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0183](cases/GO_biological_process_0183.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0184](cases/GO_biological_process_0184.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0185](cases/GO_biological_process_0185.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0187](cases/GO_biological_process_0187.md) | lookup-dependent | lookup-dependent | Yes |
-| [GO_biological_process_0188](cases/GO_biological_process_0188.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0190](cases/GO_biological_process_0190.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_biological_process_0191](cases/GO_biological_process_0191.md) | lookup-dependent | lookup-dependent | Yes |
-| [GO_biological_process_0192](cases/GO_biological_process_0192.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0000](cases/GO_cellular_component_0000.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0002](cases/GO_cellular_component_0002.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0004](cases/GO_cellular_component_0004.md) | lookup-dependent | lookup-dependent | Yes |
-| [GO_cellular_component_0005](cases/GO_cellular_component_0005.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0006](cases/GO_cellular_component_0006.md) | lookup-dependent | reasoning-supported | No |
-| [GO_cellular_component_0010](cases/GO_cellular_component_0010.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0012](cases/GO_cellular_component_0012.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0015](cases/GO_cellular_component_0015.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0019](cases/GO_cellular_component_0019.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0020](cases/GO_cellular_component_0020.md) | lookup-dependent | reasoning-supported | No |
-| [GO_cellular_component_0023](cases/GO_cellular_component_0023.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0026](cases/GO_cellular_component_0026.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0028](cases/GO_cellular_component_0028.md) | uncertain | reasoning-supported | No |
-| [GO_cellular_component_0029](cases/GO_cellular_component_0029.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0030](cases/GO_cellular_component_0030.md) | lookup-dependent | reasoning-supported | No |
-| [GO_cellular_component_0031](cases/GO_cellular_component_0031.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0032](cases/GO_cellular_component_0032.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0033](cases/GO_cellular_component_0033.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0034](cases/GO_cellular_component_0034.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0035](cases/GO_cellular_component_0035.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0037](cases/GO_cellular_component_0037.md) | lookup-dependent | reasoning-supported | No |
-| [GO_cellular_component_0038](cases/GO_cellular_component_0038.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0039](cases/GO_cellular_component_0039.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0042](cases/GO_cellular_component_0042.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0044](cases/GO_cellular_component_0044.md) | Unusable review | reasoning-supported | Incomplete |
-| [GO_cellular_component_0045](cases/GO_cellular_component_0045.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0046](cases/GO_cellular_component_0046.md) | lookup-dependent | reasoning-supported | No |
-| [GO_cellular_component_0048](cases/GO_cellular_component_0048.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0049](cases/GO_cellular_component_0049.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0051](cases/GO_cellular_component_0051.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0052](cases/GO_cellular_component_0052.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0053](cases/GO_cellular_component_0053.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0054](cases/GO_cellular_component_0054.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0055](cases/GO_cellular_component_0055.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0056](cases/GO_cellular_component_0056.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0059](cases/GO_cellular_component_0059.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0061](cases/GO_cellular_component_0061.md) | lookup-dependent | lookup-dependent | Yes |
-| [GO_cellular_component_0063](cases/GO_cellular_component_0063.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0064](cases/GO_cellular_component_0064.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0065](cases/GO_cellular_component_0065.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0066](cases/GO_cellular_component_0066.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0067](cases/GO_cellular_component_0067.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0068](cases/GO_cellular_component_0068.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0069](cases/GO_cellular_component_0069.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0070](cases/GO_cellular_component_0070.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0071](cases/GO_cellular_component_0071.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0072](cases/GO_cellular_component_0072.md) | lookup-dependent | reasoning-supported | No |
-| [GO_cellular_component_0073](cases/GO_cellular_component_0073.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0077](cases/GO_cellular_component_0077.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0078](cases/GO_cellular_component_0078.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0079](cases/GO_cellular_component_0079.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0080](cases/GO_cellular_component_0080.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0082](cases/GO_cellular_component_0082.md) | lookup-dependent | reasoning-supported | No |
-| [GO_cellular_component_0084](cases/GO_cellular_component_0084.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0085](cases/GO_cellular_component_0085.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0086](cases/GO_cellular_component_0086.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0087](cases/GO_cellular_component_0087.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0088](cases/GO_cellular_component_0088.md) | lookup-dependent | reasoning-supported | No |
-| [GO_cellular_component_0089](cases/GO_cellular_component_0089.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0090](cases/GO_cellular_component_0090.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0091](cases/GO_cellular_component_0091.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0092](cases/GO_cellular_component_0092.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0094](cases/GO_cellular_component_0094.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0095](cases/GO_cellular_component_0095.md) | lookup-dependent | lookup-dependent | Yes |
-| [GO_cellular_component_0096](cases/GO_cellular_component_0096.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0097](cases/GO_cellular_component_0097.md) | lookup-dependent | reasoning-supported | No |
-| [GO_cellular_component_0098](cases/GO_cellular_component_0098.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0099](cases/GO_cellular_component_0099.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0101](cases/GO_cellular_component_0101.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0103](cases/GO_cellular_component_0103.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0104](cases/GO_cellular_component_0104.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0106](cases/GO_cellular_component_0106.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0107](cases/GO_cellular_component_0107.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0108](cases/GO_cellular_component_0108.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0109](cases/GO_cellular_component_0109.md) | lookup-dependent | lookup-dependent | Yes |
-| [GO_cellular_component_0110](cases/GO_cellular_component_0110.md) | lookup-dependent | reasoning-supported | No |
-| [GO_cellular_component_0112](cases/GO_cellular_component_0112.md) | lookup-dependent | reasoning-supported | No |
-| [GO_cellular_component_0113](cases/GO_cellular_component_0113.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0114](cases/GO_cellular_component_0114.md) | lookup-dependent | reasoning-supported | No |
-| [GO_cellular_component_0117](cases/GO_cellular_component_0117.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0118](cases/GO_cellular_component_0118.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0120](cases/GO_cellular_component_0120.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0121](cases/GO_cellular_component_0121.md) | reasoning-supported | lookup-dependent | No |
-| [GO_cellular_component_0123](cases/GO_cellular_component_0123.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0124](cases/GO_cellular_component_0124.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0125](cases/GO_cellular_component_0125.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0126](cases/GO_cellular_component_0126.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0127](cases/GO_cellular_component_0127.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0128](cases/GO_cellular_component_0128.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0129](cases/GO_cellular_component_0129.md) | lookup-dependent | reasoning-supported | No |
-| [GO_cellular_component_0130](cases/GO_cellular_component_0130.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0131](cases/GO_cellular_component_0131.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0132](cases/GO_cellular_component_0132.md) | lookup-dependent | lookup-dependent | Yes |
-| [GO_cellular_component_0133](cases/GO_cellular_component_0133.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0134](cases/GO_cellular_component_0134.md) | lookup-dependent | reasoning-supported | No |
-| [GO_cellular_component_0135](cases/GO_cellular_component_0135.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0138](cases/GO_cellular_component_0138.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0139](cases/GO_cellular_component_0139.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0140](cases/GO_cellular_component_0140.md) | reasoning-supported | Unusable review | Incomplete |
-| [GO_cellular_component_0141](cases/GO_cellular_component_0141.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0142](cases/GO_cellular_component_0142.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0143](cases/GO_cellular_component_0143.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0144](cases/GO_cellular_component_0144.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0145](cases/GO_cellular_component_0145.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0146](cases/GO_cellular_component_0146.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0147](cases/GO_cellular_component_0147.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0149](cases/GO_cellular_component_0149.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0150](cases/GO_cellular_component_0150.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0151](cases/GO_cellular_component_0151.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0152](cases/GO_cellular_component_0152.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0153](cases/GO_cellular_component_0153.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0155](cases/GO_cellular_component_0155.md) | lookup-dependent | lookup-dependent | Yes |
-| [GO_cellular_component_0157](cases/GO_cellular_component_0157.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0158](cases/GO_cellular_component_0158.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0159](cases/GO_cellular_component_0159.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0162](cases/GO_cellular_component_0162.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0163](cases/GO_cellular_component_0163.md) | lookup-dependent | reasoning-supported | No |
-| [GO_cellular_component_0164](cases/GO_cellular_component_0164.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0165](cases/GO_cellular_component_0165.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0166](cases/GO_cellular_component_0166.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0167](cases/GO_cellular_component_0167.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0169](cases/GO_cellular_component_0169.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0170](cases/GO_cellular_component_0170.md) | lookup-dependent | reasoning-supported | No |
-| [GO_cellular_component_0171](cases/GO_cellular_component_0171.md) | lookup-dependent | reasoning-supported | No |
-| [GO_cellular_component_0172](cases/GO_cellular_component_0172.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0175](cases/GO_cellular_component_0175.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0177](cases/GO_cellular_component_0177.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0178](cases/GO_cellular_component_0178.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0179](cases/GO_cellular_component_0179.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0180](cases/GO_cellular_component_0180.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0181](cases/GO_cellular_component_0181.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0183](cases/GO_cellular_component_0183.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0184](cases/GO_cellular_component_0184.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0187](cases/GO_cellular_component_0187.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0188](cases/GO_cellular_component_0188.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0189](cases/GO_cellular_component_0189.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0191](cases/GO_cellular_component_0191.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_cellular_component_0193](cases/GO_cellular_component_0193.md) | lookup-dependent | lookup-dependent | Yes |
-| [GO_molecular_function_0001](cases/GO_molecular_function_0001.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0002](cases/GO_molecular_function_0002.md) | lookup-dependent | reasoning-supported | No |
-| [GO_molecular_function_0003](cases/GO_molecular_function_0003.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0004](cases/GO_molecular_function_0004.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0006](cases/GO_molecular_function_0006.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0007](cases/GO_molecular_function_0007.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0009](cases/GO_molecular_function_0009.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0010](cases/GO_molecular_function_0010.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0011](cases/GO_molecular_function_0011.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0012](cases/GO_molecular_function_0012.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0013](cases/GO_molecular_function_0013.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0014](cases/GO_molecular_function_0014.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0015](cases/GO_molecular_function_0015.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0017](cases/GO_molecular_function_0017.md) | reasoning-supported | Unusable review | Incomplete |
-| [GO_molecular_function_0020](cases/GO_molecular_function_0020.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0021](cases/GO_molecular_function_0021.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0022](cases/GO_molecular_function_0022.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0023](cases/GO_molecular_function_0023.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0024](cases/GO_molecular_function_0024.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0025](cases/GO_molecular_function_0025.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0026](cases/GO_molecular_function_0026.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0028](cases/GO_molecular_function_0028.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0029](cases/GO_molecular_function_0029.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0030](cases/GO_molecular_function_0030.md) | uncertain | reasoning-supported | No |
-| [GO_molecular_function_0031](cases/GO_molecular_function_0031.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0032](cases/GO_molecular_function_0032.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0035](cases/GO_molecular_function_0035.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0036](cases/GO_molecular_function_0036.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0038](cases/GO_molecular_function_0038.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0039](cases/GO_molecular_function_0039.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0040](cases/GO_molecular_function_0040.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0041](cases/GO_molecular_function_0041.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0044](cases/GO_molecular_function_0044.md) | uncertain | reasoning-supported | No |
-| [GO_molecular_function_0046](cases/GO_molecular_function_0046.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0048](cases/GO_molecular_function_0048.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0049](cases/GO_molecular_function_0049.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0050](cases/GO_molecular_function_0050.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0051](cases/GO_molecular_function_0051.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0052](cases/GO_molecular_function_0052.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0056](cases/GO_molecular_function_0056.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0057](cases/GO_molecular_function_0057.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0059](cases/GO_molecular_function_0059.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0060](cases/GO_molecular_function_0060.md) | lookup-dependent | reasoning-supported | No |
-| [GO_molecular_function_0062](cases/GO_molecular_function_0062.md) | lookup-dependent | reasoning-supported | No |
-| [GO_molecular_function_0064](cases/GO_molecular_function_0064.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0065](cases/GO_molecular_function_0065.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0068](cases/GO_molecular_function_0068.md) | Unusable review | reasoning-supported | Incomplete |
-| [GO_molecular_function_0069](cases/GO_molecular_function_0069.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0072](cases/GO_molecular_function_0072.md) | lookup-dependent | reasoning-supported | No |
-| [GO_molecular_function_0074](cases/GO_molecular_function_0074.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0076](cases/GO_molecular_function_0076.md) | lookup-dependent | reasoning-supported | No |
-| [GO_molecular_function_0077](cases/GO_molecular_function_0077.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0079](cases/GO_molecular_function_0079.md) | lookup-dependent | reasoning-supported | No |
-| [GO_molecular_function_0082](cases/GO_molecular_function_0082.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0083](cases/GO_molecular_function_0083.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0085](cases/GO_molecular_function_0085.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0086](cases/GO_molecular_function_0086.md) | uncertain | lookup-dependent | No |
-| [GO_molecular_function_0087](cases/GO_molecular_function_0087.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0088](cases/GO_molecular_function_0088.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0091](cases/GO_molecular_function_0091.md) | reasoning-supported | lookup-dependent | No |
-| [GO_molecular_function_0092](cases/GO_molecular_function_0092.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0093](cases/GO_molecular_function_0093.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0095](cases/GO_molecular_function_0095.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0096](cases/GO_molecular_function_0096.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0098](cases/GO_molecular_function_0098.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0099](cases/GO_molecular_function_0099.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0100](cases/GO_molecular_function_0100.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0102](cases/GO_molecular_function_0102.md) | lookup-dependent | reasoning-supported | No |
-| [GO_molecular_function_0103](cases/GO_molecular_function_0103.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0105](cases/GO_molecular_function_0105.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0106](cases/GO_molecular_function_0106.md) | lookup-dependent | reasoning-supported | No |
-| [GO_molecular_function_0107](cases/GO_molecular_function_0107.md) | Unusable review | reasoning-supported | Incomplete |
-| [GO_molecular_function_0109](cases/GO_molecular_function_0109.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0111](cases/GO_molecular_function_0111.md) | uncertain | lookup-dependent | No |
-| [GO_molecular_function_0113](cases/GO_molecular_function_0113.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0114](cases/GO_molecular_function_0114.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0115](cases/GO_molecular_function_0115.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0116](cases/GO_molecular_function_0116.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0117](cases/GO_molecular_function_0117.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0118](cases/GO_molecular_function_0118.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0119](cases/GO_molecular_function_0119.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0120](cases/GO_molecular_function_0120.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0121](cases/GO_molecular_function_0121.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0122](cases/GO_molecular_function_0122.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0123](cases/GO_molecular_function_0123.md) | lookup-dependent | reasoning-supported | No |
-| [GO_molecular_function_0124](cases/GO_molecular_function_0124.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0125](cases/GO_molecular_function_0125.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0126](cases/GO_molecular_function_0126.md) | lookup-dependent | reasoning-supported | No |
-| [GO_molecular_function_0127](cases/GO_molecular_function_0127.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0128](cases/GO_molecular_function_0128.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0129](cases/GO_molecular_function_0129.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0130](cases/GO_molecular_function_0130.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0134](cases/GO_molecular_function_0134.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0135](cases/GO_molecular_function_0135.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0136](cases/GO_molecular_function_0136.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0138](cases/GO_molecular_function_0138.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0139](cases/GO_molecular_function_0139.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0141](cases/GO_molecular_function_0141.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0142](cases/GO_molecular_function_0142.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0143](cases/GO_molecular_function_0143.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0147](cases/GO_molecular_function_0147.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0148](cases/GO_molecular_function_0148.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0151](cases/GO_molecular_function_0151.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0152](cases/GO_molecular_function_0152.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0154](cases/GO_molecular_function_0154.md) | lookup-dependent | reasoning-supported | No |
-| [GO_molecular_function_0155](cases/GO_molecular_function_0155.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0156](cases/GO_molecular_function_0156.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0159](cases/GO_molecular_function_0159.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0160](cases/GO_molecular_function_0160.md) | lookup-dependent | lookup-dependent | Yes |
-| [GO_molecular_function_0161](cases/GO_molecular_function_0161.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0163](cases/GO_molecular_function_0163.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0164](cases/GO_molecular_function_0164.md) | lookup-dependent | reasoning-supported | No |
-| [GO_molecular_function_0168](cases/GO_molecular_function_0168.md) | lookup-dependent | reasoning-supported | No |
-| [GO_molecular_function_0169](cases/GO_molecular_function_0169.md) | lookup-dependent | reasoning-supported | No |
-| [GO_molecular_function_0170](cases/GO_molecular_function_0170.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0171](cases/GO_molecular_function_0171.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0175](cases/GO_molecular_function_0175.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0176](cases/GO_molecular_function_0176.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0177](cases/GO_molecular_function_0177.md) | uncertain | reasoning-supported | No |
-| [GO_molecular_function_0178](cases/GO_molecular_function_0178.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0180](cases/GO_molecular_function_0180.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0181](cases/GO_molecular_function_0181.md) | lookup-dependent | reasoning-supported | No |
-| [GO_molecular_function_0185](cases/GO_molecular_function_0185.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0186](cases/GO_molecular_function_0186.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0187](cases/GO_molecular_function_0187.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0189](cases/GO_molecular_function_0189.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0190](cases/GO_molecular_function_0190.md) | reasoning-supported | reasoning-supported | Yes |
-| [GO_molecular_function_0193](cases/GO_molecular_function_0193.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0000](cases/active_site_0000.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0001](cases/active_site_0001.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0002](cases/active_site_0002.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0003](cases/active_site_0003.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0004](cases/active_site_0004.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0005](cases/active_site_0005.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0006](cases/active_site_0006.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0007](cases/active_site_0007.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0008](cases/active_site_0008.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0009](cases/active_site_0009.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0014](cases/active_site_0014.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0015](cases/active_site_0015.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0016](cases/active_site_0016.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0017](cases/active_site_0017.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0019](cases/active_site_0019.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0020](cases/active_site_0020.md) | reasoning-supported | Unusable review | Incomplete |
-| [active_site_0021](cases/active_site_0021.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0022](cases/active_site_0022.md) | reasoning-supported | Unusable review | Incomplete |
-| [active_site_0025](cases/active_site_0025.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0026](cases/active_site_0026.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0027](cases/active_site_0027.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0028](cases/active_site_0028.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0029](cases/active_site_0029.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0032](cases/active_site_0032.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0033](cases/active_site_0033.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0034](cases/active_site_0034.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0035](cases/active_site_0035.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0036](cases/active_site_0036.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0037](cases/active_site_0037.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0038](cases/active_site_0038.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0040](cases/active_site_0040.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0041](cases/active_site_0041.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0047](cases/active_site_0047.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0049](cases/active_site_0049.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0050](cases/active_site_0050.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0051](cases/active_site_0051.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0052](cases/active_site_0052.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0054](cases/active_site_0054.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0058](cases/active_site_0058.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0060](cases/active_site_0060.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0061](cases/active_site_0061.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0062](cases/active_site_0062.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0063](cases/active_site_0063.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0064](cases/active_site_0064.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0065](cases/active_site_0065.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0066](cases/active_site_0066.md) | reasoning-supported | Unusable review | Incomplete |
-| [active_site_0067](cases/active_site_0067.md) | reasoning-supported | lookup-dependent | No |
-| [active_site_0068](cases/active_site_0068.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0070](cases/active_site_0070.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0071](cases/active_site_0071.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0073](cases/active_site_0073.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0074](cases/active_site_0074.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0075](cases/active_site_0075.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0077](cases/active_site_0077.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0078](cases/active_site_0078.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0079](cases/active_site_0079.md) | reasoning-supported | Unusable review | Incomplete |
-| [active_site_0080](cases/active_site_0080.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0081](cases/active_site_0081.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0082](cases/active_site_0082.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0083](cases/active_site_0083.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0084](cases/active_site_0084.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0085](cases/active_site_0085.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0088](cases/active_site_0088.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0089](cases/active_site_0089.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0090](cases/active_site_0090.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0091](cases/active_site_0091.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0092](cases/active_site_0092.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0093](cases/active_site_0093.md) | lookup-dependent | reasoning-supported | No |
-| [active_site_0094](cases/active_site_0094.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0095](cases/active_site_0095.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0096](cases/active_site_0096.md) | Unusable review | Unusable review | Incomplete |
-| [active_site_0097](cases/active_site_0097.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0098](cases/active_site_0098.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0099](cases/active_site_0099.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0100](cases/active_site_0100.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0106](cases/active_site_0106.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0107](cases/active_site_0107.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0108](cases/active_site_0108.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0109](cases/active_site_0109.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0110](cases/active_site_0110.md) | reasoning-supported | Unusable review | Incomplete |
-| [active_site_0112](cases/active_site_0112.md) | reasoning-supported | Unusable review | Incomplete |
-| [active_site_0118](cases/active_site_0118.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0119](cases/active_site_0119.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0121](cases/active_site_0121.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0122](cases/active_site_0122.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0123](cases/active_site_0123.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0124](cases/active_site_0124.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0125](cases/active_site_0125.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0127](cases/active_site_0127.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0130](cases/active_site_0130.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0132](cases/active_site_0132.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0133](cases/active_site_0133.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0136](cases/active_site_0136.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0137](cases/active_site_0137.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0142](cases/active_site_0142.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0144](cases/active_site_0144.md) | reasoning-supported | reasoning-supported | Yes |
-| [active_site_0145](cases/active_site_0145.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0001](cases/catalytic_activity_0001.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0002](cases/catalytic_activity_0002.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0005](cases/catalytic_activity_0005.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0006](cases/catalytic_activity_0006.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0008](cases/catalytic_activity_0008.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0009](cases/catalytic_activity_0009.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0011](cases/catalytic_activity_0011.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0014](cases/catalytic_activity_0014.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0016](cases/catalytic_activity_0016.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0017](cases/catalytic_activity_0017.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0019](cases/catalytic_activity_0019.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0021](cases/catalytic_activity_0021.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0022](cases/catalytic_activity_0022.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0024](cases/catalytic_activity_0024.md) | lookup-dependent | reasoning-supported | No |
-| [catalytic_activity_0025](cases/catalytic_activity_0025.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0026](cases/catalytic_activity_0026.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0027](cases/catalytic_activity_0027.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0028](cases/catalytic_activity_0028.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0031](cases/catalytic_activity_0031.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0037](cases/catalytic_activity_0037.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0040](cases/catalytic_activity_0040.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0044](cases/catalytic_activity_0044.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0045](cases/catalytic_activity_0045.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0046](cases/catalytic_activity_0046.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0048](cases/catalytic_activity_0048.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0049](cases/catalytic_activity_0049.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0051](cases/catalytic_activity_0051.md) | lookup-dependent | reasoning-supported | No |
-| [catalytic_activity_0053](cases/catalytic_activity_0053.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0054](cases/catalytic_activity_0054.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0055](cases/catalytic_activity_0055.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0056](cases/catalytic_activity_0056.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0057](cases/catalytic_activity_0057.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0058](cases/catalytic_activity_0058.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0059](cases/catalytic_activity_0059.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0060](cases/catalytic_activity_0060.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0061](cases/catalytic_activity_0061.md) | lookup-dependent | reasoning-supported | No |
-| [catalytic_activity_0062](cases/catalytic_activity_0062.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0063](cases/catalytic_activity_0063.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0064](cases/catalytic_activity_0064.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0065](cases/catalytic_activity_0065.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0067](cases/catalytic_activity_0067.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0068](cases/catalytic_activity_0068.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0070](cases/catalytic_activity_0070.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0072](cases/catalytic_activity_0072.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0073](cases/catalytic_activity_0073.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0074](cases/catalytic_activity_0074.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0075](cases/catalytic_activity_0075.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0076](cases/catalytic_activity_0076.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0077](cases/catalytic_activity_0077.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0079](cases/catalytic_activity_0079.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0081](cases/catalytic_activity_0081.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0082](cases/catalytic_activity_0082.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0084](cases/catalytic_activity_0084.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0085](cases/catalytic_activity_0085.md) | lookup-dependent | reasoning-supported | No |
-| [catalytic_activity_0086](cases/catalytic_activity_0086.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0087](cases/catalytic_activity_0087.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0088](cases/catalytic_activity_0088.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0090](cases/catalytic_activity_0090.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0092](cases/catalytic_activity_0092.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0093](cases/catalytic_activity_0093.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0094](cases/catalytic_activity_0094.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0095](cases/catalytic_activity_0095.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0096](cases/catalytic_activity_0096.md) | Unusable review | reasoning-supported | Incomplete |
-| [catalytic_activity_0097](cases/catalytic_activity_0097.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0101](cases/catalytic_activity_0101.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0103](cases/catalytic_activity_0103.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0104](cases/catalytic_activity_0104.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0105](cases/catalytic_activity_0105.md) | Unusable review | reasoning-supported | Incomplete |
-| [catalytic_activity_0106](cases/catalytic_activity_0106.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0109](cases/catalytic_activity_0109.md) | Unusable review | reasoning-supported | Incomplete |
-| [catalytic_activity_0110](cases/catalytic_activity_0110.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0111](cases/catalytic_activity_0111.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0114](cases/catalytic_activity_0114.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0116](cases/catalytic_activity_0116.md) | Unusable review | reasoning-supported | Incomplete |
-| [catalytic_activity_0117](cases/catalytic_activity_0117.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0118](cases/catalytic_activity_0118.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0119](cases/catalytic_activity_0119.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0121](cases/catalytic_activity_0121.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0123](cases/catalytic_activity_0123.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0125](cases/catalytic_activity_0125.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0128](cases/catalytic_activity_0128.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0129](cases/catalytic_activity_0129.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0130](cases/catalytic_activity_0130.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0131](cases/catalytic_activity_0131.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0132](cases/catalytic_activity_0132.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0133](cases/catalytic_activity_0133.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0134](cases/catalytic_activity_0134.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0135](cases/catalytic_activity_0135.md) | lookup-dependent | reasoning-supported | No |
-| [catalytic_activity_0136](cases/catalytic_activity_0136.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0137](cases/catalytic_activity_0137.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0140](cases/catalytic_activity_0140.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0141](cases/catalytic_activity_0141.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0142](cases/catalytic_activity_0142.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0143](cases/catalytic_activity_0143.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0144](cases/catalytic_activity_0144.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0145](cases/catalytic_activity_0145.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0146](cases/catalytic_activity_0146.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0147](cases/catalytic_activity_0147.md) | lookup-dependent | reasoning-supported | No |
-| [catalytic_activity_0148](cases/catalytic_activity_0148.md) | Unusable review | reasoning-supported | Incomplete |
-| [catalytic_activity_0149](cases/catalytic_activity_0149.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0150](cases/catalytic_activity_0150.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0152](cases/catalytic_activity_0152.md) | Unusable review | reasoning-supported | Incomplete |
-| [catalytic_activity_0153](cases/catalytic_activity_0153.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0155](cases/catalytic_activity_0155.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0156](cases/catalytic_activity_0156.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0158](cases/catalytic_activity_0158.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0159](cases/catalytic_activity_0159.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0162](cases/catalytic_activity_0162.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0163](cases/catalytic_activity_0163.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0164](cases/catalytic_activity_0164.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0165](cases/catalytic_activity_0165.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0166](cases/catalytic_activity_0166.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0167](cases/catalytic_activity_0167.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0168](cases/catalytic_activity_0168.md) | lookup-dependent | reasoning-supported | No |
-| [catalytic_activity_0171](cases/catalytic_activity_0171.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0172](cases/catalytic_activity_0172.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0173](cases/catalytic_activity_0173.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0174](cases/catalytic_activity_0174.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0178](cases/catalytic_activity_0178.md) | Unusable review | reasoning-supported | Incomplete |
-| [catalytic_activity_0180](cases/catalytic_activity_0180.md) | lookup-dependent | reasoning-supported | No |
-| [catalytic_activity_0183](cases/catalytic_activity_0183.md) | lookup-dependent | reasoning-supported | No |
-| [catalytic_activity_0184](cases/catalytic_activity_0184.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0187](cases/catalytic_activity_0187.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0189](cases/catalytic_activity_0189.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0190](cases/catalytic_activity_0190.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0191](cases/catalytic_activity_0191.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0192](cases/catalytic_activity_0192.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0193](cases/catalytic_activity_0193.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0194](cases/catalytic_activity_0194.md) | lookup-dependent | reasoning-supported | No |
-| [catalytic_activity_0196](cases/catalytic_activity_0196.md) | reasoning-supported | reasoning-supported | Yes |
-| [catalytic_activity_0199](cases/catalytic_activity_0199.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0000](cases/cofactor_0000.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0001](cases/cofactor_0001.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0003](cases/cofactor_0003.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0004](cases/cofactor_0004.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0012](cases/cofactor_0012.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0013](cases/cofactor_0013.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0017](cases/cofactor_0017.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0018](cases/cofactor_0018.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0019](cases/cofactor_0019.md) | lookup-dependent | reasoning-supported | No |
-| [cofactor_0021](cases/cofactor_0021.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0023](cases/cofactor_0023.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0024](cases/cofactor_0024.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0026](cases/cofactor_0026.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0027](cases/cofactor_0027.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0028](cases/cofactor_0028.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0030](cases/cofactor_0030.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0031](cases/cofactor_0031.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0032](cases/cofactor_0032.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0033](cases/cofactor_0033.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0034](cases/cofactor_0034.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0035](cases/cofactor_0035.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0037](cases/cofactor_0037.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0039](cases/cofactor_0039.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0042](cases/cofactor_0042.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0043](cases/cofactor_0043.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0044](cases/cofactor_0044.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0045](cases/cofactor_0045.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0047](cases/cofactor_0047.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0049](cases/cofactor_0049.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0050](cases/cofactor_0050.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0052](cases/cofactor_0052.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0057](cases/cofactor_0057.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0062](cases/cofactor_0062.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0063](cases/cofactor_0063.md) | lookup-dependent | lookup-dependent | Yes |
-| [cofactor_0067](cases/cofactor_0067.md) | lookup-dependent | reasoning-supported | No |
-| [cofactor_0068](cases/cofactor_0068.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0069](cases/cofactor_0069.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0070](cases/cofactor_0070.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0071](cases/cofactor_0071.md) | lookup-dependent | reasoning-supported | No |
-| [cofactor_0072](cases/cofactor_0072.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0075](cases/cofactor_0075.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0078](cases/cofactor_0078.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0080](cases/cofactor_0080.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0081](cases/cofactor_0081.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0082](cases/cofactor_0082.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0083](cases/cofactor_0083.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0084](cases/cofactor_0084.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0085](cases/cofactor_0085.md) | lookup-dependent | reasoning-supported | No |
-| [cofactor_0086](cases/cofactor_0086.md) | Unusable review | reasoning-supported | Incomplete |
-| [cofactor_0087](cases/cofactor_0087.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0090](cases/cofactor_0090.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0091](cases/cofactor_0091.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0092](cases/cofactor_0092.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0096](cases/cofactor_0096.md) | uncertain | reasoning-supported | No |
-| [cofactor_0099](cases/cofactor_0099.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0100](cases/cofactor_0100.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0101](cases/cofactor_0101.md) | lookup-dependent | reasoning-supported | No |
-| [cofactor_0102](cases/cofactor_0102.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0103](cases/cofactor_0103.md) | lookup-dependent | reasoning-supported | No |
-| [cofactor_0104](cases/cofactor_0104.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0105](cases/cofactor_0105.md) | lookup-dependent | reasoning-supported | No |
-| [cofactor_0106](cases/cofactor_0106.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0107](cases/cofactor_0107.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0109](cases/cofactor_0109.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0116](cases/cofactor_0116.md) | lookup-dependent | reasoning-supported | No |
-| [cofactor_0118](cases/cofactor_0118.md) | reasoning-supported | lookup-dependent | No |
-| [cofactor_0120](cases/cofactor_0120.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0126](cases/cofactor_0126.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0127](cases/cofactor_0127.md) | lookup-dependent | reasoning-supported | No |
-| [cofactor_0129](cases/cofactor_0129.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0130](cases/cofactor_0130.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0131](cases/cofactor_0131.md) | uncertain | reasoning-supported | No |
-| [cofactor_0133](cases/cofactor_0133.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0135](cases/cofactor_0135.md) | uncertain | Unusable review | Incomplete |
-| [cofactor_0136](cases/cofactor_0136.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0138](cases/cofactor_0138.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0139](cases/cofactor_0139.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0143](cases/cofactor_0143.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0144](cases/cofactor_0144.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0146](cases/cofactor_0146.md) | Unusable review | reasoning-supported | Incomplete |
-| [cofactor_0151](cases/cofactor_0151.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0152](cases/cofactor_0152.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0153](cases/cofactor_0153.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0156](cases/cofactor_0156.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0157](cases/cofactor_0157.md) | reasoning-supported | Unusable review | Incomplete |
-| [cofactor_0159](cases/cofactor_0159.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0160](cases/cofactor_0160.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0162](cases/cofactor_0162.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0163](cases/cofactor_0163.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0164](cases/cofactor_0164.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0165](cases/cofactor_0165.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0166](cases/cofactor_0166.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0167](cases/cofactor_0167.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0168](cases/cofactor_0168.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0169](cases/cofactor_0169.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0170](cases/cofactor_0170.md) | Unusable review | reasoning-supported | Incomplete |
-| [cofactor_0172](cases/cofactor_0172.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0173](cases/cofactor_0173.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0175](cases/cofactor_0175.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0176](cases/cofactor_0176.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0177](cases/cofactor_0177.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0179](cases/cofactor_0179.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0180](cases/cofactor_0180.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0181](cases/cofactor_0181.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0182](cases/cofactor_0182.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0183](cases/cofactor_0183.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0184](cases/cofactor_0184.md) | reasoning-supported | reasoning-supported | Yes |
-| [cofactor_0185](cases/cofactor_0185.md) | reasoning-supported | reasoning-supported | Yes |
-| [motif_position_0000](cases/motif_position_0000.md) | reasoning-supported | reasoning-supported | Yes |
-| [motif_position_0005](cases/motif_position_0005.md) | reasoning-supported | reasoning-supported | Yes |
-| [motif_position_0008](cases/motif_position_0008.md) | reasoning-supported | reasoning-supported | Yes |
-| [motif_position_0009](cases/motif_position_0009.md) | reasoning-supported | reasoning-supported | Yes |
-| [motif_position_0011](cases/motif_position_0011.md) | reasoning-supported | reasoning-supported | Yes |
-| [motif_position_0012](cases/motif_position_0012.md) | reasoning-supported | reasoning-supported | Yes |
-| [motif_position_0013](cases/motif_position_0013.md) | lookup-dependent | lookup-dependent | Yes |
-| [motif_position_0014](cases/motif_position_0014.md) | reasoning-supported | Unusable review | Incomplete |
-| [motif_position_0015](cases/motif_position_0015.md) | lookup-dependent | reasoning-supported | No |
-| [motif_position_0016](cases/motif_position_0016.md) | lookup-dependent | reasoning-supported | No |
-| [motif_position_0020](cases/motif_position_0020.md) | reasoning-supported | reasoning-supported | Yes |
-| [motif_position_0021](cases/motif_position_0021.md) | lookup-dependent | reasoning-supported | No |
-| [motif_position_0023](cases/motif_position_0023.md) | reasoning-supported | reasoning-supported | Yes |
-| [motif_position_0025](cases/motif_position_0025.md) | reasoning-supported | reasoning-supported | Yes |
-| [motif_position_0030](cases/motif_position_0030.md) | reasoning-supported | reasoning-supported | Yes |
-| [motif_position_0031](cases/motif_position_0031.md) | lookup-dependent | reasoning-supported | No |
-| [motif_position_0032](cases/motif_position_0032.md) | lookup-dependent | reasoning-supported | No |
-| [motif_position_0035](cases/motif_position_0035.md) | reasoning-supported | reasoning-supported | Yes |
-| [motif_position_0036](cases/motif_position_0036.md) | lookup-dependent | Unusable review | Incomplete |
-| [motif_position_0037](cases/motif_position_0037.md) | reasoning-supported | reasoning-supported | Yes |
-| [motif_position_0040](cases/motif_position_0040.md) | reasoning-supported | reasoning-supported | Yes |
-| [motif_position_0041](cases/motif_position_0041.md) | lookup-dependent | reasoning-supported | No |
-| [motif_position_0042](cases/motif_position_0042.md) | lookup-dependent | lookup-dependent | Yes |
-| [motif_position_0043](cases/motif_position_0043.md) | lookup-dependent | reasoning-supported | No |
-| [motif_position_0044](cases/motif_position_0044.md) | reasoning-supported | reasoning-supported | Yes |
-| [motif_position_0046](cases/motif_position_0046.md) | reasoning-supported | reasoning-supported | Yes |
-| [motif_position_0047](cases/motif_position_0047.md) | lookup-dependent | reasoning-supported | No |
-| [motif_position_0049](cases/motif_position_0049.md) | lookup-dependent | reasoning-supported | No |
-| [motif_position_0050](cases/motif_position_0050.md) | lookup-dependent | reasoning-supported | No |
-| [motif_position_0051](cases/motif_position_0051.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0000](cases/pathway_0000.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0001](cases/pathway_0001.md) | lookup-dependent | lookup-dependent | Yes |
-| [pathway_0002](cases/pathway_0002.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0003](cases/pathway_0003.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0005](cases/pathway_0005.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0006](cases/pathway_0006.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0007](cases/pathway_0007.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0008](cases/pathway_0008.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0009](cases/pathway_0009.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0010](cases/pathway_0010.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0011](cases/pathway_0011.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0012](cases/pathway_0012.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0013](cases/pathway_0013.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0014](cases/pathway_0014.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0015](cases/pathway_0015.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0016](cases/pathway_0016.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0017](cases/pathway_0017.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0018](cases/pathway_0018.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0019](cases/pathway_0019.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0020](cases/pathway_0020.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0021](cases/pathway_0021.md) | uncertain | reasoning-supported | No |
-| [pathway_0022](cases/pathway_0022.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0023](cases/pathway_0023.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0024](cases/pathway_0024.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0025](cases/pathway_0025.md) | reasoning-supported | Unusable review | Incomplete |
-| [pathway_0026](cases/pathway_0026.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0027](cases/pathway_0027.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0028](cases/pathway_0028.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0029](cases/pathway_0029.md) | reasoning-supported | lookup-dependent | No |
-| [pathway_0030](cases/pathway_0030.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0031](cases/pathway_0031.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0032](cases/pathway_0032.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0033](cases/pathway_0033.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0036](cases/pathway_0036.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0038](cases/pathway_0038.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0039](cases/pathway_0039.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0040](cases/pathway_0040.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0041](cases/pathway_0041.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0042](cases/pathway_0042.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0043](cases/pathway_0043.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0044](cases/pathway_0044.md) | reasoning-supported | Unusable review | Incomplete |
-| [pathway_0045](cases/pathway_0045.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0046](cases/pathway_0046.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0047](cases/pathway_0047.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0048](cases/pathway_0048.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0049](cases/pathway_0049.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0051](cases/pathway_0051.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0052](cases/pathway_0052.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0054](cases/pathway_0054.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0055](cases/pathway_0055.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0056](cases/pathway_0056.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0057](cases/pathway_0057.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0058](cases/pathway_0058.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0059](cases/pathway_0059.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0061](cases/pathway_0061.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0062](cases/pathway_0062.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0063](cases/pathway_0063.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0064](cases/pathway_0064.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0065](cases/pathway_0065.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0066](cases/pathway_0066.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0067](cases/pathway_0067.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0068](cases/pathway_0068.md) | lookup-dependent | lookup-dependent | Yes |
-| [pathway_0069](cases/pathway_0069.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0070](cases/pathway_0070.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0072](cases/pathway_0072.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0073](cases/pathway_0073.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0074](cases/pathway_0074.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0075](cases/pathway_0075.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0076](cases/pathway_0076.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0078](cases/pathway_0078.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0079](cases/pathway_0079.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0080](cases/pathway_0080.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0081](cases/pathway_0081.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0082](cases/pathway_0082.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0083](cases/pathway_0083.md) | lookup-dependent | Unusable review | Incomplete |
-| [pathway_0084](cases/pathway_0084.md) | lookup-dependent | lookup-dependent | Yes |
-| [pathway_0085](cases/pathway_0085.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0086](cases/pathway_0086.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0087](cases/pathway_0087.md) | lookup-dependent | lookup-dependent | Yes |
-| [pathway_0088](cases/pathway_0088.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0089](cases/pathway_0089.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0090](cases/pathway_0090.md) | lookup-dependent | lookup-dependent | Yes |
-| [pathway_0091](cases/pathway_0091.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0092](cases/pathway_0092.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0094](cases/pathway_0094.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0095](cases/pathway_0095.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0096](cases/pathway_0096.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0097](cases/pathway_0097.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0098](cases/pathway_0098.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0099](cases/pathway_0099.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0101](cases/pathway_0101.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0102](cases/pathway_0102.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0103](cases/pathway_0103.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0104](cases/pathway_0104.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0106](cases/pathway_0106.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0107](cases/pathway_0107.md) | uncertain | reasoning-supported | No |
-| [pathway_0108](cases/pathway_0108.md) | reasoning-supported | lookup-dependent | No |
-| [pathway_0109](cases/pathway_0109.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0110](cases/pathway_0110.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0111](cases/pathway_0111.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0112](cases/pathway_0112.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0114](cases/pathway_0114.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0115](cases/pathway_0115.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0117](cases/pathway_0117.md) | lookup-dependent | lookup-dependent | Yes |
-| [pathway_0118](cases/pathway_0118.md) | Unusable review | reasoning-supported | Incomplete |
-| [pathway_0119](cases/pathway_0119.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0120](cases/pathway_0120.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0121](cases/pathway_0121.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0122](cases/pathway_0122.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0123](cases/pathway_0123.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0124](cases/pathway_0124.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0125](cases/pathway_0125.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0126](cases/pathway_0126.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0128](cases/pathway_0128.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0129](cases/pathway_0129.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0130](cases/pathway_0130.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0131](cases/pathway_0131.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0132](cases/pathway_0132.md) | lookup-dependent | lookup-dependent | Yes |
-| [pathway_0133](cases/pathway_0133.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0134](cases/pathway_0134.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0135](cases/pathway_0135.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0136](cases/pathway_0136.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0138](cases/pathway_0138.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0139](cases/pathway_0139.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0140](cases/pathway_0140.md) | lookup-dependent | lookup-dependent | Yes |
-| [pathway_0141](cases/pathway_0141.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0142](cases/pathway_0142.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0143](cases/pathway_0143.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0144](cases/pathway_0144.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0145](cases/pathway_0145.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0146](cases/pathway_0146.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0147](cases/pathway_0147.md) | lookup-dependent | lookup-dependent | Yes |
-| [pathway_0148](cases/pathway_0148.md) | lookup-dependent | lookup-dependent | Yes |
-| [pathway_0149](cases/pathway_0149.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0150](cases/pathway_0150.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0151](cases/pathway_0151.md) | Unusable review | reasoning-supported | Incomplete |
-| [pathway_0153](cases/pathway_0153.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0155](cases/pathway_0155.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0157](cases/pathway_0157.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0158](cases/pathway_0158.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0159](cases/pathway_0159.md) | lookup-dependent | lookup-dependent | Yes |
-| [pathway_0160](cases/pathway_0160.md) | Unusable review | Unusable review | Incomplete |
-| [pathway_0161](cases/pathway_0161.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0162](cases/pathway_0162.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0164](cases/pathway_0164.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0165](cases/pathway_0165.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0166](cases/pathway_0166.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0168](cases/pathway_0168.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0169](cases/pathway_0169.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0171](cases/pathway_0171.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0172](cases/pathway_0172.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0173](cases/pathway_0173.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0174](cases/pathway_0174.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0175](cases/pathway_0175.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0176](cases/pathway_0176.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0177](cases/pathway_0177.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0178](cases/pathway_0178.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0179](cases/pathway_0179.md) | reasoning-supported | Unusable review | Incomplete |
-| [pathway_0180](cases/pathway_0180.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0181](cases/pathway_0181.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0182](cases/pathway_0182.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0183](cases/pathway_0183.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0184](cases/pathway_0184.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0185](cases/pathway_0185.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0186](cases/pathway_0186.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0187](cases/pathway_0187.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0188](cases/pathway_0188.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0189](cases/pathway_0189.md) | lookup-dependent | lookup-dependent | Yes |
-| [pathway_0191](cases/pathway_0191.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0192](cases/pathway_0192.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0194](cases/pathway_0194.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0195](cases/pathway_0195.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0196](cases/pathway_0196.md) | reasoning-supported | reasoning-supported | Yes |
-| [pathway_0197](cases/pathway_0197.md) | lookup-dependent | lookup-dependent | Yes |
-| [pathway_0198](cases/pathway_0198.md) | lookup-dependent | reasoning-supported | No |
-| [pathway_0199](cases/pathway_0199.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0000](cases/ph_0000.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0001](cases/ph_0001.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0002](cases/ph_0002.md) | lookup-dependent | lookup-dependent | Yes |
-| [ph_0003](cases/ph_0003.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0004](cases/ph_0004.md) | lookup-dependent | lookup-dependent | Yes |
-| [ph_0006](cases/ph_0006.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0007](cases/ph_0007.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0008](cases/ph_0008.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0009](cases/ph_0009.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0010](cases/ph_0010.md) | reasoning-supported | reasoning-supported | Yes |
-| [ph_0011](cases/ph_0011.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0012](cases/ph_0012.md) | lookup-dependent | lookup-dependent | Yes |
-| [ph_0013](cases/ph_0013.md) | reasoning-supported | reasoning-supported | Yes |
-| [ph_0014](cases/ph_0014.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0015](cases/ph_0015.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0016](cases/ph_0016.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0017](cases/ph_0017.md) | reasoning-supported | reasoning-supported | Yes |
-| [ph_0018](cases/ph_0018.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0022](cases/ph_0022.md) | lookup-dependent | lookup-dependent | Yes |
-| [ph_0023](cases/ph_0023.md) | lookup-dependent | lookup-dependent | Yes |
-| [ph_0024](cases/ph_0024.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0025](cases/ph_0025.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0026](cases/ph_0026.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0027](cases/ph_0027.md) | reasoning-supported | reasoning-supported | Yes |
-| [ph_0028](cases/ph_0028.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0029](cases/ph_0029.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0030](cases/ph_0030.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0032](cases/ph_0032.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0033](cases/ph_0033.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0034](cases/ph_0034.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0035](cases/ph_0035.md) | reasoning-supported | reasoning-supported | Yes |
-| [ph_0036](cases/ph_0036.md) | lookup-dependent | lookup-dependent | Yes |
-| [ph_0037](cases/ph_0037.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0038](cases/ph_0038.md) | reasoning-supported | reasoning-supported | Yes |
-| [ph_0039](cases/ph_0039.md) | uncertain | lookup-dependent | No |
-| [ph_0040](cases/ph_0040.md) | lookup-dependent | lookup-dependent | Yes |
-| [ph_0041](cases/ph_0041.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0042](cases/ph_0042.md) | lookup-dependent | lookup-dependent | Yes |
-| [ph_0043](cases/ph_0043.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0045](cases/ph_0045.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0046](cases/ph_0046.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0047](cases/ph_0047.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0048](cases/ph_0048.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0049](cases/ph_0049.md) | lookup-dependent | lookup-dependent | Yes |
-| [ph_0050](cases/ph_0050.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0051](cases/ph_0051.md) | lookup-dependent | lookup-dependent | Yes |
-| [ph_0052](cases/ph_0052.md) | lookup-dependent | reasoning-supported | No |
-| [ph_0053](cases/ph_0053.md) | lookup-dependent | lookup-dependent | Yes |
-| [temperature_0000](cases/temperature_0000.md) | lookup-dependent | lookup-dependent | Yes |
-| [temperature_0001](cases/temperature_0001.md) | lookup-dependent | reasoning-supported | No |
-| [temperature_0002](cases/temperature_0002.md) | lookup-dependent | lookup-dependent | Yes |
-| [temperature_0003](cases/temperature_0003.md) | reasoning-supported | reasoning-supported | Yes |
-| [temperature_0004](cases/temperature_0004.md) | lookup-dependent | reasoning-supported | No |
-| [temperature_0005](cases/temperature_0005.md) | lookup-dependent | reasoning-supported | No |
-| [temperature_0006](cases/temperature_0006.md) | lookup-dependent | lookup-dependent | Yes |
-| [temperature_0007](cases/temperature_0007.md) | lookup-dependent | lookup-dependent | Yes |
-| [temperature_0008](cases/temperature_0008.md) | lookup-dependent | lookup-dependent | Yes |
-| [temperature_0009](cases/temperature_0009.md) | lookup-dependent | lookup-dependent | Yes |
-| [temperature_0010](cases/temperature_0010.md) | lookup-dependent | lookup-dependent | Yes |
-| [temperature_0011](cases/temperature_0011.md) | reasoning-supported | reasoning-supported | Yes |
-| [temperature_0012](cases/temperature_0012.md) | lookup-dependent | lookup-dependent | Yes |
-| [temperature_0013](cases/temperature_0013.md) | lookup-dependent | reasoning-supported | No |
-| [temperature_0017](cases/temperature_0017.md) | lookup-dependent | reasoning-supported | No |
-| [temperature_0018](cases/temperature_0018.md) | lookup-dependent | reasoning-supported | No |
-| [temperature_0019](cases/temperature_0019.md) | lookup-dependent | lookup-dependent | Yes |
-| [temperature_0020](cases/temperature_0020.md) | lookup-dependent | lookup-dependent | Yes |
-| [temperature_0021](cases/temperature_0021.md) | lookup-dependent | reasoning-supported | No |
-| [temperature_0023](cases/temperature_0023.md) | lookup-dependent | lookup-dependent | Yes |
-| [temperature_0024](cases/temperature_0024.md) | lookup-dependent | lookup-dependent | Yes |
-| [temperature_0025](cases/temperature_0025.md) | lookup-dependent | reasoning-supported | No |
-| [temperature_0026](cases/temperature_0026.md) | lookup-dependent | lookup-dependent | Yes |
-| [temperature_0027](cases/temperature_0027.md) | lookup-dependent | reasoning-supported | No |
-| [temperature_0028](cases/temperature_0028.md) | lookup-dependent | lookup-dependent | Yes |
-| [temperature_0029](cases/temperature_0029.md) | lookup-dependent | reasoning-supported | No |
-| [temperature_0030](cases/temperature_0030.md) | lookup-dependent | reasoning-supported | No |
-| [temperature_0031](cases/temperature_0031.md) | lookup-dependent | lookup-dependent | Yes |
-| [temperature_0032](cases/temperature_0032.md) | lookup-dependent | reasoning-supported | No |
-| [temperature_0033](cases/temperature_0033.md) | reasoning-supported | reasoning-supported | Yes |
-| [temperature_0034](cases/temperature_0034.md) | lookup-dependent | lookup-dependent | Yes |
-| [temperature_0035](cases/temperature_0035.md) | lookup-dependent | lookup-dependent | Yes |
-| [temperature_0036](cases/temperature_0036.md) | reasoning-supported | reasoning-supported | Yes |
-| [temperature_0037](cases/temperature_0037.md) | lookup-dependent | reasoning-supported | No |
-| [temperature_0038](cases/temperature_0038.md) | lookup-dependent | reasoning-supported | No |
-| [temperature_0039](cases/temperature_0039.md) | lookup-dependent | reasoning-supported | No |
-| [temperature_0040](cases/temperature_0040.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0000](cases/transmembrane_0000.md) | reasoning-supported | lookup-dependent | No |
-| [transmembrane_0001](cases/transmembrane_0001.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0005](cases/transmembrane_0005.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0006](cases/transmembrane_0006.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0007](cases/transmembrane_0007.md) | uncertain | reasoning-supported | No |
-| [transmembrane_0008](cases/transmembrane_0008.md) | uncertain | reasoning-supported | No |
-| [transmembrane_0009](cases/transmembrane_0009.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0011](cases/transmembrane_0011.md) | lookup-dependent | lookup-dependent | Yes |
-| [transmembrane_0013](cases/transmembrane_0013.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0016](cases/transmembrane_0016.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0017](cases/transmembrane_0017.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0018](cases/transmembrane_0018.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0019](cases/transmembrane_0019.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0020](cases/transmembrane_0020.md) | lookup-dependent | lookup-dependent | Yes |
-| [transmembrane_0021](cases/transmembrane_0021.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0022](cases/transmembrane_0022.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0023](cases/transmembrane_0023.md) | reasoning-supported | lookup-dependent | No |
-| [transmembrane_0025](cases/transmembrane_0025.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0026](cases/transmembrane_0026.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0028](cases/transmembrane_0028.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0030](cases/transmembrane_0030.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0031](cases/transmembrane_0031.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0032](cases/transmembrane_0032.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0033](cases/transmembrane_0033.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0034](cases/transmembrane_0034.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0035](cases/transmembrane_0035.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0037](cases/transmembrane_0037.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0038](cases/transmembrane_0038.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0039](cases/transmembrane_0039.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0040](cases/transmembrane_0040.md) | lookup-dependent | Unusable review | Incomplete |
-| [transmembrane_0041](cases/transmembrane_0041.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0042](cases/transmembrane_0042.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0044](cases/transmembrane_0044.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0045](cases/transmembrane_0045.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0046](cases/transmembrane_0046.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0047](cases/transmembrane_0047.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0048](cases/transmembrane_0048.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0049](cases/transmembrane_0049.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0050](cases/transmembrane_0050.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0052](cases/transmembrane_0052.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0053](cases/transmembrane_0053.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0054](cases/transmembrane_0054.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0055](cases/transmembrane_0055.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0057](cases/transmembrane_0057.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0059](cases/transmembrane_0059.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0060](cases/transmembrane_0060.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0062](cases/transmembrane_0062.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0063](cases/transmembrane_0063.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0064](cases/transmembrane_0064.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0066](cases/transmembrane_0066.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0067](cases/transmembrane_0067.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0068](cases/transmembrane_0068.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0070](cases/transmembrane_0070.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0071](cases/transmembrane_0071.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0073](cases/transmembrane_0073.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0074](cases/transmembrane_0074.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0075](cases/transmembrane_0075.md) | reasoning-supported | lookup-dependent | No |
-| [transmembrane_0076](cases/transmembrane_0076.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0077](cases/transmembrane_0077.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0078](cases/transmembrane_0078.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0079](cases/transmembrane_0079.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0080](cases/transmembrane_0080.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0081](cases/transmembrane_0081.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0082](cases/transmembrane_0082.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0084](cases/transmembrane_0084.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0085](cases/transmembrane_0085.md) | lookup-dependent | Unusable review | Incomplete |
-| [transmembrane_0086](cases/transmembrane_0086.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0087](cases/transmembrane_0087.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0091](cases/transmembrane_0091.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0092](cases/transmembrane_0092.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0096](cases/transmembrane_0096.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0097](cases/transmembrane_0097.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0099](cases/transmembrane_0099.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0100](cases/transmembrane_0100.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0101](cases/transmembrane_0101.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0102](cases/transmembrane_0102.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0103](cases/transmembrane_0103.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0104](cases/transmembrane_0104.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0105](cases/transmembrane_0105.md) | lookup-dependent | lookup-dependent | Yes |
-| [transmembrane_0106](cases/transmembrane_0106.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0107](cases/transmembrane_0107.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0108](cases/transmembrane_0108.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0109](cases/transmembrane_0109.md) | reasoning-supported | Unusable review | Incomplete |
-| [transmembrane_0111](cases/transmembrane_0111.md) | reasoning-supported | lookup-dependent | No |
-| [transmembrane_0112](cases/transmembrane_0112.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0114](cases/transmembrane_0114.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0115](cases/transmembrane_0115.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0117](cases/transmembrane_0117.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0119](cases/transmembrane_0119.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0122](cases/transmembrane_0122.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0123](cases/transmembrane_0123.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0124](cases/transmembrane_0124.md) | lookup-dependent | lookup-dependent | Yes |
-| [transmembrane_0128](cases/transmembrane_0128.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0129](cases/transmembrane_0129.md) | lookup-dependent | reasoning-supported | No |
-| [transmembrane_0131](cases/transmembrane_0131.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0132](cases/transmembrane_0132.md) | reasoning-supported | reasoning-supported | Yes |
-| [transmembrane_0133](cases/transmembrane_0133.md) | reasoning-supported | reasoning-supported | Yes |
+**Why it was flagged:** Both reviewers pointed to experimental evidence describing the protein as **secreted outside the cell**. The nucleus annotation in the matched record was computationally inferred. They judged the evidence inconsistent with the intended primary location; the question does not offer “outside the cell” as a choice.
 
 </details>
+
+[See all questions flagged for multiple defensible choices](multiple_defensible_by_both_86_20261104.md) · [See all questions flagged as lookup-dependent](lookup_dependent_52_20261104.md) · [See answer-key exceptions](../LIVEPROTEINBENCH_ANSWER_KEY_EXCEPTIONS.md)
+
+## What skills do models need?
+
+We collected **1,289 candidate skill descriptions** across protein-problem categories by comparing saved answers where the teacher matched the benchmark key and Qwen 4B did not. These are specific operations suggested by the answers, not proven explanations of the models’ errors.
+
+<details>
+<summary>Example: reading the supplied sequence incorrectly</summary>
+
+**Issue:** The model miscounts residues and reports the wrong sequence at the requested positions.
+
+**Task:** Choose the position of a protein motif.
+
+**Protein sequence:**
+
+```text
+MHLSTALFSAIALLAATQVIGASVEVPRDVAAIQIATSPYYACNCPNNCKHKKGSGCKYHSGPSDKSKVISGKCEWQGGQLNCIAT
+```
+
+**Choices:**
+
+- A. 72–83
+- B. 535–543
+- C. 206–213
+- D. 8–15
+
+**Author’s answer:** A, 72–83.
+
+**Teacher’s saved answer:** A. It counted 86 residues and reported that positions 72–83 contain `GKCEWQGGQLNC`. It noted that the question did not specify the motif.
+
+**Qwen 4B’s saved answer:** D. It reported 85 residues and selected the 8–15 region. For positions 72–83, it reported `KCEWQGGQLNCIAT`—14 residues for a 12-residue range.
+
+**What this illustrates:** The issue is an observable counting and transcription discrepancy. Correct counting alone does not establish which motif the question intended or whether Qwen’s final answer would change.
+
+</details>
+
+<details>
+<summary>Example: misunderstanding what an answer choice means</summary>
+
+**Issue:** The model assigns the wrong biological activity to an enzyme number and evaluates that mistaken activity against the sequence.
+
+**Task:** Choose the protein’s enzyme classification.
+
+**Protein sequence:**
+
+```text
+MMESAVTAHTLRIAMAQFDFPVGAVTQNTDRIIEYIAAARDEFEADIVLFPELAISGYPPEDLLLRPGFLAHCEQALARIAAATRGIVAVVGWPQSAGSVVYNAASVLREGRIEATYRKRELPNYAVFDERRYFDVDPDGDNCVVTVKGVQVGVVICEDLWFAEPLAKTVQAGAELVLVPNASPYERGKHAQRDALLAERTRESGAAIAYLNVVGGQDALVFDGASVVADGDGTVHPAAAAFVDQWLVVDYAAGERSFTPVVWVDDGDESMDALAWRAVVRGLKDYCGKNGFRKVWLGLSGGIDSALVLAMAVDALGGENVTAVRLPSRYTAGLSNDLADEQCRALGVKLETIAIEPAFEGLLAALGPLFADTQPDITEENLQSRSRGVILMALSNKFGGLVLTTGNKSEYAVGYATIYGDMCGGYAPLKDLYKTEVFGLAKWRNTVGGAPVIPPAVISRPPSAELRDNQTDQDSLPPYDVLDGILYRYVDQEQSRDDIVAAGYAADTVEHVLRLVRLNEWKRHQAAPGPKVSRRAFGRERRYPITNGYSGQ
+```
+
+**Choices:**
+
+- A. EC 5.6.2.4
+- B. EC 2.3.1.193
+- C. EC 6.3.5.1
+- D. EC 1.14.19.80
+
+**Author’s answer:** C, EC 6.3.5.1.
+
+**Teacher’s saved answer:** C. It described EC 6.3.5.1 as glutamine-dependent NAD⁺ synthetase.
+
+**Qwen 4B’s saved answer:** D. It described option C as an ATP-dependent DNA ligase and rejected it using claimed DNA-ligase features.
+
+**What this illustrates:** Understanding what each option means is a separate challenge from reading the protein sequence. The different descriptions alone do not prove why the final answers differ.
+
+</details>
+
+The **both-wrong cases** are different: they can suggest concerns to investigate, but they do not supply a successful teacher solution from which to reliably identify what the student needed to learn. The 1,289-skill collection therefore comes from the teacher-correct/student-wrong comparison.
+
+## Using the skills
+
+We start with synthetic protein questions, answers, and reasoning generated by Qwen Flash-Next, and generate new questions targeted to the identified skills. We compare teacher and Qwen 4B answers and select questions where the teacher consistently chooses a supported answer and Qwen 4B is wrong. GPT-Luna reviews the selected questions and answers.
