@@ -2,6 +2,48 @@
 
 We reviewed the questions in our evaluation set to understand whether the benchmark can be scored reliably. We also compared model answers to identify skills that could guide protein training data.
 
+## What are these questions?
+
+Each question gives the model a protein’s amino-acid sequence, a task description, and multiple-choice answers. It asks about a property associated with that protein.
+
+The questions span **12 categories**, covering protein function, sequence features, cellular roles, and operating conditions. We use them to study how our trained model reads sequences and applies biological knowledge across different protein problems.
+
+<details>
+<summary>See the 12 question categories</summary>
+
+| Category | What the question asks |
+|---|---|
+| **Catalytic activity** | What chemical reaction does the enzyme perform? |
+| **EC number** | Which enzyme classification describes its reaction? |
+| **GO molecular function** | What does the protein do at the molecular level? |
+| **GO biological process** | What larger biological process does it contribute to? |
+| **Pathway** | Which biological pathway does it participate in? |
+| **Active site** | Which amino acids form the enzyme’s catalytic center? |
+| **Motif position** | Where is a conserved sequence pattern located? |
+| **Transmembrane region** | Which sequence region spans a membrane? |
+| **Cofactor** | Which nonprotein helper is associated with the enzyme’s activity? |
+| **GO cellular component** | Where in or around the cell is the protein located? |
+| **pH** | Which pH is associated with optimal activity? |
+| **Temperature / thermal adaptation** | Which temperature describes its activity or adaptation? |
+
+GO means **Gene Ontology**: its three categories describe molecular function, biological process, and cellular location. These descriptions paraphrase the [benchmark’s task prompts](https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/prompt.json).
+
+</details>
+
+<details>
+<summary>How can someone reason toward an answer?</summary>
+
+- **Examine the sequence.** Check proposed motifs and residue positions against the actual amino acids. For membrane questions, examine whether a candidate region has the properties expected of a membrane-spanning segment.
+- **Consider the protein family.** Compare several sequence features with known protein families and their functions. For example, a combination of characteristic features can suggest a kinase more strongly than one short pattern alone.
+- **Connect function to the choices.** For enzyme questions, compare the candidate reactions, substrates, products, and cofactors with what is known about the proposed family. EC-number definitions describe the activities in the choices.
+- **Connect the protein to its cellular role.** Targeting signals, membrane regions, and family knowledge can help assess where the protein operates and which process or pathway it contributes to.
+- **Assess activity conditions.** Protein-family and organism knowledge can suggest plausible pH or temperature ranges. A precise optimum may require a measurement or other information about the particular protein.
+- **Compare all choices.** Check whether the evidence distinguishes the proposed answer from the alternatives, including whether more than one choice could apply.
+
+These are ways to approach the questions; they are not claims about the internal steps a model actually followed. [Background on sequence-based family and domain analysis](https://www.ebi.ac.uk/training/online/courses/interpro-functional-and-structural-analysis/how-to-search-interpro/sequence-searching/)
+
+</details>
+
 ## Are the questions reliable?
 
 GPT-6 Luna and Qwen3.8 Flash-Next (NVFP4) reviewed the questions.
