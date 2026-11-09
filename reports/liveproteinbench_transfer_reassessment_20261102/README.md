@@ -6,7 +6,65 @@ We reviewed the questions in our evaluation set to understand whether the benchm
 
 GPT-6 Luna and Qwen3.8 Flash-Next (NVFP4) reviewed the questions.
 
-- Both reviewers flagged questions with **multiple defensible answers (4.95%)**, questions requiring **protein-specific lookup or recall (3.00%)**, and **answer keys contradicted by the evidence (0.69%)**. These categories overlap.
+- **Multiple defensible answers — 4.95%.** Both reviewers listed at least two defensible choices.
+
+<details>
+<summary>Example: a protein that can both cut and transfer</summary>
+
+**Task:** Choose the protein’s molecular function.
+
+**Original task description:** The current task is about Gene Ontology (GO) Molecular Function Prediction, which is to predict the fundamental activity of a protein at the molecular level, as defined by the Gene Ontology (GO) 'Molecular Function' branch. This describes the elemental tasks a protein performs, such as catalysis, transport, or binding to specific molecules. Based on the protein's amino acid sequence, you are to select the option that best describes its primary molecular function..
+
+**Protein sequence:**
+
+```text
+MRSSTISASAVVLLSGLASAQTFTDCNPTEKTCPSDPAIGGLQVTDFTAGKSSYWEVEDGTTMSYDGTLGAQFVISTATDAPTIKNIGYIMFGRIETWVRASAGTGIVSSFILESDDLDEIDWEWLGANNAEAENNFFGKGNTTTYDRAQYPAVATPIDTFHNYTIDWTAKSTIWYIDGVAVRTLLYDDKQTVGGKNYPQTPMLVKMGSWIGCASKAAETDSATAGTCSWAGGAVDLTQGPFTMYVKNVTIQDYGCATEYTYGDLTGDYTSIKATGGCSADGSAASPSASSSSAASGSSSSTKSSSGSSTLSTVTGTTSAIAVGTATGTATLSAGEKATAAAISGSTTSSSTIAKVTTTSDANSLKKPKHEYGMIDLGVMVLGLGLGYLVM
+```
+
+**Choices, explained in simpler language:**
+
+- A. Break down GTP, an energy-carrying molecule *(GTPase activity)*.
+- B. Transfer sugar units from one molecule to another *(glycosyltransferase activity)*.
+- C. Store nutrients *(nutrient reservoir activity)*.
+- D. Cut chemical bonds involving sugars *(hydrolase activity, acting on glycosyl bonds)*.
+
+The explanations before the parentheses are paraphrases; the original choices are in parentheses.
+
+**Author’s answer:** B.
+
+**Why it was flagged:** Both reviewers pointed to an annotation describing a protein that can both **cut chitin**, a sugar-containing material, and **transfer chitin to another molecule**. Both listed B and D as defensible.
+
+</details>
+
+- **Protein-specific lookup or recall — 3.00%.** Both reviewers said answering requires a fact about the particular protein beyond general biological knowledge.
+
+<details>
+<summary>Example: distinguishing nearby temperatures</summary>
+
+**Task:** Choose the protein’s optimal temperature.
+
+**Original task description:** The current task is about Protein Thermal Adaptation Prediction, which is to predict the thermal adaptation category of a protein. This relates to the optimal temperature range in which the protein is stable and functional (e.g., cold-adapted, moderate temperature-adapted, or heat-adapted). This property is encoded by subtle patterns in the amino acid sequence that affect the protein's structural stability, such as amino acid composition and the potential for internal bonds. Based on the provided sequence, you must classify the protein into its most likely thermal category..
+
+**Protein sequence:**
+
+```text
+MDLLQILLAIAGLLAILLLQKQWRTKTSPGAKAGRKLPPEPAGAWPVIGHLHKLGGPNPIYRNLAEWSDKYGPVMTLKLGMQNAVVVSDREAIKECFTTNDKALADRPPSSIGLHLGFNYAAIGAAPYGPYWRDMRKLVLLEVLSSRRLEMLRNVRISEIGTSIKELYSNIIRSSGGSGPAKVVISHWIEQLTLNYILRTIAGRRFSDDSSKDAQYVKGVINDFMYFAGQFVVSDVIPIPLLRWLDPQGHLKGMKRVAKEVDTMCEAWIQEHVQRRMREKPGPGQEQDFIDVLLNNRDVMRKAQEEIDNHVGKERWVDETDLKHLVYLQAIVKEGLRLYPPGPLGAPHRAIEDCQVGGYFIPKGTQLLVNVWKLHRDPRVWSEPEKFMPERFLTRQAEVDVFGHHFELLPFGSGRRACPGITFAVQVMHLTVARLLQGFDMTTPSNLPVDMTEGPGVTMPKAHPVEVLMMPRLPSALYEP
+```
+
+**Choices:**
+
+- A. 24–29°C
+- B. 30°C
+- C. 56°C
+- D. 34°C
+
+**Author’s answer:** B, 30°C.
+
+**Why it was flagged:** The reviewers said sequence and family knowledge might suggest a moderate temperature, but did not distinguish 30°C from 34°C or the nearby range.
+
+</details>
+
+- **Answer key contradicted by evidence — 0.69%.** Both reviewers judged the author’s answer contradicted by the evidence.
 
 <details>
 <summary>Example: the answer says steroid breakdown, but the evidence points to sugar breakdown</summary>
@@ -35,6 +93,8 @@ MAAVGRYSGKVVVVTGGSRGIGAAIVRAFVDSGAQVVFCDKDEAGGRAVEQELLGTVFIPGDVTQEGDLQTLISETVSRF
 **Why this matters:** L-fucose is a sugar; steroids are a different class of molecules that includes many hormones. Breaking down a sugar and breaking down a steroid are different biological processes. The evidence identifies this protein with an initial step in L-fucose breakdown, while the benchmark’s answer says steroid breakdown.
 
 </details>
+
+These categories overlap.
 
 ## What problems does our trained model run into?
 
