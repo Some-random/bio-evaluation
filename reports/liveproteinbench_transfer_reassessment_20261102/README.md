@@ -6,9 +6,7 @@ We reviewed the questions in our evaluation set to understand whether the benchm
 
 LiveProteinBench builds its questions using **UniProt**, a public database of protein sequences and information about proteins.
 
-Most sequences in UniProt come from genes submitted to public genetic databases. UniProt adds descriptions of protein functions, locations, and other properties using scientific studies and computational analysis. [UniProt](https://www.uniprot.org/help/uniprotkb)
-
-The benchmark turns this information into multiple-choice questions.
+Most sequences in UniProt come from public genetic databases. UniProt adds descriptions of protein functions, locations, and other properties using scientific studies and computational analysis. [UniProt](https://www.uniprot.org/help/uniprotkb)
 
 The questions span **12 categories**, covering most araes of protein function, sequence features, cellular roles, and operating conditions. We use them to study how well our model acquires bio knowledge and reasoning.
 
