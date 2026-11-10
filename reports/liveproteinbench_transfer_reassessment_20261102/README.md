@@ -4,7 +4,11 @@ We reviewed the questions in our evaluation set to understand whether the benchm
 
 ## What are these questions?
 
-Each question gives the model a protein’s amino-acid sequence, a task description, and multiple-choice answers. It asks about a property associated with that protein.
+LiveProteinBench builds its questions using **UniProt**, a public database of protein sequences and information about proteins.
+
+Most sequences in UniProt come from genes submitted to public genetic databases. UniProt adds descriptions of protein functions, locations, and other properties using scientific studies and computational analysis. [UniProt](https://www.uniprot.org/help/uniprotkb)
+
+The benchmark turns this information into multiple-choice questions. In our evaluation, the model sees a protein’s sequence, a task description, and the answer choices; it selects a property associated with that protein. [LiveProteinBench paper](https://arxiv.org/html/2512.22257)
 
 The questions span **12 categories**, covering protein function, sequence features, cellular roles, and operating conditions. We use them to study how our trained model reads sequences and applies biological knowledge across different protein problems.
 
@@ -40,7 +44,7 @@ GO means **Gene Ontology**: its three categories describe molecular function, bi
 - **Assess activity conditions.** Protein-family and organism knowledge can suggest plausible pH or temperature ranges. A precise optimum may require a measurement or other information about the particular protein.
 - **Compare all choices.** Check whether the evidence distinguishes the proposed answer from the alternatives, including whether more than one choice could apply.
 
-These are ways to approach the questions; they are not claims about the internal steps a model actually followed. [Background on sequence-based family and domain analysis](https://www.ebi.ac.uk/training/online/courses/interpro-functional-and-structural-analysis/how-to-search-interpro/sequence-searching/)
+[Background on sequence-based family and domain analysis](https://www.ebi.ac.uk/training/online/courses/interpro-functional-and-structural-analysis/how-to-search-interpro/sequence-searching/)
 
 </details>
 
