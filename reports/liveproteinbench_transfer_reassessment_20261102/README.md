@@ -8,9 +8,9 @@ LiveProteinBench builds its questions using **UniProt**, a public database of pr
 
 Most sequences in UniProt come from genes submitted to public genetic databases. UniProt adds descriptions of protein functions, locations, and other properties using scientific studies and computational analysis. [UniProt](https://www.uniprot.org/help/uniprotkb)
 
-The benchmark turns this information into multiple-choice questions. In our evaluation, the model sees a protein’s sequence, a task description, and the answer choices; it selects a property associated with that protein. [LiveProteinBench paper](https://arxiv.org/html/2512.22257)
+The benchmark turns this information into multiple-choice questions.
 
-The questions span **12 categories**, covering protein function, sequence features, cellular roles, and operating conditions. We use them to study how our trained model reads sequences and applies biological knowledge across different protein problems.
+The questions span **12 categories**, covering most araes of protein function, sequence features, cellular roles, and operating conditions. We use them to study how well our model acquires bio knowledge and reasoning.
 
 <details>
 <summary>See the 12 question categories</summary>
@@ -30,8 +30,6 @@ The questions span **12 categories**, covering protein function, sequence featur
 | **pH** | Which pH is associated with optimal activity? |
 | **Temperature / thermal adaptation** | Which temperature describes its activity or adaptation? |
 
-GO means **Gene Ontology**: its three categories describe molecular function, biological process, and cellular location. These descriptions paraphrase the [benchmark’s task prompts](https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/prompt.json).
-
 </details>
 
 <details>
@@ -43,8 +41,6 @@ GO means **Gene Ontology**: its three categories describe molecular function, bi
 - **Connect the protein to its cellular role.** Targeting signals, membrane regions, and family knowledge can help assess where the protein operates and which process or pathway it contributes to.
 - **Assess activity conditions.** Protein-family and organism knowledge can suggest plausible pH or temperature ranges. A precise optimum may require a measurement or other information about the particular protein.
 - **Compare all choices.** Check whether the evidence distinguishes the proposed answer from the alternatives, including whether more than one choice could apply.
-
-[Background on sequence-based family and domain analysis](https://www.ebi.ac.uk/training/online/courses/interpro-functional-and-structural-analysis/how-to-search-interpro/sequence-searching/)
 
 </details>
 
@@ -59,7 +55,7 @@ GPT-6 Luna and Qwen3.8 Flash-Next (NVFP4) reviewed the questions.
 
 **Task:** Choose the protein’s molecular function.
 
-**Original task description:** The current task is about Gene Ontology (GO) Molecular Function Prediction, which is to predict the fundamental activity of a protein at the molecular level, as defined by the Gene Ontology (GO) 'Molecular Function' branch. This describes the elemental tasks a protein performs, such as catalysis, transport, or binding to specific molecules. Based on the protein's amino acid sequence, you are to select the option that best describes its primary molecular function..
+**Original task description:** The current task is about Gene Ontology (GO) Molecular Function Prediction, which is to predict the fundamental activity of a protein at the molecular level.
 
 **Protein sequence:**
 
@@ -89,7 +85,7 @@ The explanations before the parentheses are paraphrases; the original choices ar
 
 **Task:** Choose the protein’s optimal temperature.
 
-**Original task description:** The current task is about Protein Thermal Adaptation Prediction, which is to predict the thermal adaptation category of a protein. This relates to the optimal temperature range in which the protein is stable and functional (e.g., cold-adapted, moderate temperature-adapted, or heat-adapted). This property is encoded by subtle patterns in the amino acid sequence that affect the protein's structural stability, such as amino acid composition and the potential for internal bonds. Based on the provided sequence, you must classify the protein into its most likely thermal category..
+**Original task description:** The current task is about Protein Thermal Adaptation Prediction, which is to predict the optimal temperature range in which the protein is stable and functional.
 
 **Protein sequence:**
 
@@ -117,7 +113,7 @@ MDLLQILLAIAGLLAILLLQKQWRTKTSPGAKAGRKLPPEPAGAWPVIGHLHKLGGPNPIYRNLAEWSDKYGPVMTLKLG
 
 **Task description:** Predict the primary biological process in which the protein participates, based on its amino acid sequence.
 
-**Original task description:** The current task is about Gene Ontology (GO) Biological Process Prediction, which is to predict the primary biological process a given protein participates in, as defined by the Gene Ontology (GO) 'Biological Process' branch. A biological process is a series of molecular events that accomplishes a larger biological program, such as cell division or signal transduction. Based on the provided protein sequence, you must select the option that best describes the overall biological objective to which the protein contributes..
+**Original task description:** The current task is about Gene Ontology (GO) Biological Process Prediction, which is to predict the primary biological process a given protein participates in.
 
 **Protein sequence:**
 
@@ -134,9 +130,7 @@ MAAVGRYSGKVVVVTGGSRGIGAAIVRAFVDSGAQVVFCDKDEAGGRAVEQELLGTVFIPGDVTQEGDLQTLISETVSRF
 
 **Author’s answer:** D, steroid breakdown.
 
-**What the reviewers found:** Both reviewers pointed to evidence that this protein participates in breaking down **L-fucose, a sugar**, rather than evidence supporting steroid breakdown as its primary process. Sugar breakdown is not one of the offered choices.
-
-**Why this matters:** L-fucose is a sugar; steroids are a different class of molecules that includes many hormones. Breaking down a sugar and breaking down a steroid are different biological processes. The evidence identifies this protein with an initial step in L-fucose breakdown, while the benchmark’s answer says steroid breakdown.
+**What the reviewers found:** Both reviewers pointed to evidence that this protein participates in breaking down **a sugar**, rather than evidence supporting steroid breakdown as its primary process. Sugar breakdown is not one of the offered choices.
 
 </details>
 
@@ -144,14 +138,14 @@ These categories overlap.
 
 ## What problems does our trained model run into?
 
-To investigate errors in our trained Qwen 4B model, we compared its answers with a teacher’s answers on questions where the teacher matched the benchmark answer and the student did not. The student answers are from epoch 5 of the original Flash-Next low-reasoning training run. GPT-6.1 Terra compared the saved answers and extracted **1,289 skill descriptions** across protein-problem categories. This comparison was inspired by [DeltaPrompts](https://arxiv.org/html/2605.15532v3).
+Inspired by [DeltaPrompts](https://arxiv.org/html/2605.15532v3), we compared its answers with a teacher’s answers on questions where the teacher matched the benchmark answer and the student did not. GPT-6.1 Terra compared the saved answers and extracted **1,289 skill descriptions** across protein-problem categories.
 
 <details>
 <summary>Example: reading what is actually in the protein sequence</summary>
 
 **Skill:** Check that a proposed sequence fragment is actually present before using it to identify the protein.
 
-**Original task description:** The current task is about Enzyme Commission (EC) Number Prediction, which is to predict the complete 4-digit Enzyme Commission (EC) number for a given protein. The EC number is a numerical classification that categorizes enzymes based on the chemical reactions they catalyze. You should select the most accurate EC number from the provided options based on the protein's sequence..
+**Original task description:** The current task is about Enzyme Commission (EC) Number Prediction, which is to predict the complete 4-digit Enzyme Commission (EC) number for a given protein. The EC number is a numerical classification that categorizes enzymes based on the chemical reactions they catalyze.
 
 **Protein sequence:**
 
@@ -250,8 +244,6 @@ D. virion membrane
 
 **What happened:** Our trained model interpreted several short water-repelling stretches as membrane-spanning regions and chose B, microneme—a compartment found in certain parasites. The teacher reported no obvious membrane-spanning region and chose A, the cytosol, the fluid inside the cell.
 
-**Why this skill matters:** Short water-repelling stretches can also occur in soluble proteins. Their presence alone does not establish that a protein crosses a membrane or identify a specific cellular compartment.
-
 <details>
 <summary>Full saved answers from both models</summary>
 
@@ -297,9 +289,9 @@ The multi-pass transmembrane topology, combined with the absence of neuronal or 
 
 ### Using the skills
 
-We start with synthetic protein questions, answers, and reasoning generated by Qwen Flash-Next, and generate new questions targeted to the identified skills. We compare teacher and Qwen 4B answers and select questions where the teacher consistently chooses a supported answer and Qwen 4B is wrong. GPT-Luna reviews the selected questions and answers.
+We use our teacher to generate new questions targeted to the identified skills. We compare teacher and student answers and select questions where the teacher consistently is right and Qwen 4B is wrong. GPT-Luna reviews the selected questions and answers.
 
-## Open question: How can we improve a student when both the student and teacher are wrong?
+## How can we improve a student when both the student and teacher are wrong?
 
 As AI-for-science problems move closer to the research frontier, the correct answer may not yet be known—even to experts—and verifying it may require expensive experiments or simulations. Comparing a wrong teacher answer with a wrong student answer can reveal differences, but it does not tell us which difference is useful to learn from.
 
