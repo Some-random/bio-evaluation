@@ -5,7 +5,7 @@
 | **Our trained Qwen3.5-4B** | | | |
 | Original questions | 10,000 | GPT-6-Luna | 32.92% |
 | Original questions | 10,000 | Flash-Next, xhigh | 33.32% |
-| Original questions | 10,000 | Flash-Next, low | 34.63% |
+| Original questions | 10,000 | Flash-Next, low | 35.72% |
 | Skill-guided: 5,000 standard + 5,000 skill-guided questions | 10,000 | Flash-Next, low | 37.53% |
 | Scaled questions | 124,000 | Flash-Next, low | 41.83% |
 | **Off-the-shelf models: our evaluations** | | | |
